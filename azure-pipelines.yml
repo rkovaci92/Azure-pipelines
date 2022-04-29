@@ -1,0 +1,25 @@
+resources:
+  repositories:
+  - repository: Farmer # The name used to reference this repository in the checkout step
+    type: github
+    endpoint: rkovaci92
+    name: mdsecactivebreach/Farmer
+  - repository: Rubeus
+    type: github
+    endpoint: rkovaci92
+    name: GhostPack/Rubeus
+  - repository: Seatbelt # In a different organization
+    type: github
+    endpoint: rkovaci92
+    name: GhostPack/Seatbelt
+
+trigger:
+- main
+
+pool:
+  vmImage: 'windows-2019'
+
+steps:
+- checkout: Farmer
+- checkout: Rubeus
+- checkout: Seatbelt
