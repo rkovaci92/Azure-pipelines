@@ -150,6 +150,14 @@ steps:
     SourceFolder: $(system.defaultworkingdirectory)
     Contents: '**\bin\$(BuildConfiguration)\**'
     TargetFolder: $(build.artifactstagingdirectory)
+
+- task: CopyFiles@2
+  displayName: 'Copy Dependencies to: $(build.artifactstagingdirectory)'
+  condition: succeededOrFailed()
+  inputs:
+    SourceFolder: $(system.defaultworkingdirectory)\StandIn\StandIn\packages\
+    Contents: '**'
+    TargetFolder: $(build.artifactstagingdirectory)
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
   condition: succeededOrFailed()
