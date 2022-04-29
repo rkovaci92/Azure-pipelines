@@ -8,7 +8,7 @@ variables:
 
 resources:
   repositories:
-  - repository: Farmer # The name used to reference this repository in the checkout step
+  - repository: Farmer 
     type: github
     endpoint: rkovaci92
     name: mdsecactivebreach/Farmer
@@ -16,10 +16,58 @@ resources:
     type: github
     endpoint: rkovaci92
     name: GhostPack/Rubeus
-  - repository: Seatbelt # In a different organization
+  - repository: Seatbelt 
     type: github
     endpoint: rkovaci92
     name: GhostPack/Seatbelt
+  - repository: SafetyKatz 
+    type: github
+    endpoint: rkovaci92
+    name: GhostPack/SafetyKatz
+  - repository: SharpUp
+    type: github
+    endpoint: rkovaci92
+    name: GhostPack/SharpUp
+  - repository: SharpDPAPI 
+    type: github
+    endpoint: rkovaci92
+    name: GhostPack/SharpDPAPI
+  - repository: Certify 
+    type: github
+    endpoint: rkovaci92
+    name: GhostPack/Certify
+  - repository: KrbRelayUp
+    type: github
+    endpoint: rkovaci92
+    name: Dec0ne/KrbRelayUp
+  - repository: Snaffler 
+    type: github
+    endpoint: rkovaci92
+    name: SnaffCon/Snaffler
+  - repository: SharpSQL 
+    type: github
+    endpoint: rkovaci92
+    name: mlcsec/SharpSQL
+  - repository: SharpWebServer
+    type: github
+    endpoint: rkovaci92
+    name: mgeeky/SharpWebServer
+  - repository: SharpWMI 
+    type: github
+    endpoint: rkovaci92
+    name: GhostPack/SharpWMI
+  - repository: SharpMiniDump
+    type: github
+    endpoint: rkovaci92
+    name: b4rtik/SharpMiniDump
+  - repository: Internal-Monologue 
+    type: github
+    endpoint: rkovaci92
+    name: eladshamir/Internal-Monologue
+  - repository: Whisker 
+    type: github
+    endpoint: rkovaci92
+    name: eladshamir/Whisker
 
 trigger:
 - main
