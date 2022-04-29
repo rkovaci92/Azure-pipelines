@@ -3,7 +3,7 @@ variables:
   value: '**\*.sln'
 - name: BuildConfiguration
   value: Release
--name: BuildPlatform
+- name: BuildPlatform
   value: 'Any CPU'
 
 resources:
