@@ -33,17 +33,17 @@ jobs:
     displayName: Build solution **\*.sln
     inputs:
       solution: $(BuildParameters.solution)
-      platform: $(BuildPlatform)
-      configuration: $(BuildConfiguration)
+      platform: Any CPU
+      configuration: Release
   - task: VSTest@2
     displayName: VsTest - testAssemblies
     inputs:
       testAssemblyVer2: >-
-        **\$(BuildConfiguration)\*test*.dll
+        **\Release\*test*.dll
 
         !**\obj\**
-      platform: $(BuildPlatform)
-      configuration: $(BuildConfiguration)
+      platform: Any CPU
+      configuration: Release
   - task: PublishSymbols@2
     displayName: Publish symbols path
     continueOnError: True
