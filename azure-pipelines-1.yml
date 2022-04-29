@@ -33,7 +33,7 @@ jobs:
     displayName: Build solution **\*.sln
     inputs:
       solution: $(BuildParameters.solution)
-      platform: Any CPU
+      platform: $(BuildPlatform)
       configuration: $(BuildConfiguration)
   - task: VSTest@2
     displayName: VsTest - testAssemblies
@@ -42,7 +42,7 @@ jobs:
         **\$(BuildConfiguration)\*test*.dll
 
         !**\obj\**
-      platform: Any CPU
+      platform: $(BuildPlatform)
       configuration: $(BuildConfiguration)
   - task: PublishSymbols@2
     displayName: Publish symbols path
