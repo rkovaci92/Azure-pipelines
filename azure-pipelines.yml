@@ -115,7 +115,13 @@ steps:
   displayName: NuGet restore
   inputs:
     solution: $(BuildParameters.solution)
-
+  
+- task: PowerShell@2
+  displayName: PowerShell Script
+  inputs:
+    targetType: inline
+    script: "Set-Content D:\\a\\1\\s\\StandIn\\StandIn\\FodyWeavers.xml '<?xml version=\"1.0\" encoding=\"utf-8\" ?>'\nAdd-Content D:\\a\\1\\s\\StandIn\\StandIn\\FodyWeavers.xml '<Weavers>'\nAdd-Content D:\\a\\1\\s\\StandIn\\StandIn\\FodyWeavers.xml '<Costura>'\nAdd-Content D:\\a\\1\\s\\StandIn\\StandIn\\FodyWeavers.xml 'DisableCleanup=\"true\"'\nAdd-Content D:\\a\\1\\s\\StandIn\\StandIn\\FodyWeavers.xml '<IncludeAssemblies>'\nAdd-Content D:\\a\\1\\s\\StandIn\\StandIn\\FodyWeavers.xml 'CommandLine'\nAdd-Content D:\\a\\1\\s\\StandIn\\StandIn\\FodyWeavers.xml '</IncludeAssemblies>'\nAdd-Content D:\\a\\1\\s\\StandIn\\StandIn\\FodyWeavers.xml '</Costura>'\nAdd-Content D:\\a\\1\\s\\StandIn\\StandIn\\FodyWeavers.xml '</Weavers>'"
+  
 - task: VSBuild@1
   displayName: Build solution **\*.sln
   inputs:
