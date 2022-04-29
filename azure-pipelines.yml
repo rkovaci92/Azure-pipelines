@@ -115,6 +115,7 @@ steps:
   displayName: NuGet restore
   inputs:
     solution: $(BuildParameters.solution)
+
 - task: VSBuild@1
   displayName: Build solution **\*.sln
   inputs:
