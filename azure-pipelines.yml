@@ -79,7 +79,18 @@ steps:
 - checkout: Farmer
 - checkout: Rubeus
 - checkout: Seatbelt
-
+- checkout: SafetyKatz
+- checkout: SharpUp
+- checkout: SharpDPAPI
+- checkout: Certify
+- checkout: KrbRelayUp
+- checkout: Snaffler
+- checkout: SharpSQL
+- checkout: SharpWebServer
+- checkout: SharpWMI
+- checkout: SharpMiniDump
+- checkout: Internal-Monologue
+- checkout: Whisker
 - task: NuGetToolInstaller@0
   displayName: Use NuGet 4.4.1
   inputs:
