@@ -10,6 +10,7 @@ resources:
   repositories:
   - repository: Farmer 
     type: github
+    endpoint: rkovaci92
     name: mdsecactivebreach/Farmer
     ref: refs/heads/main
 jobs:
