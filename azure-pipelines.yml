@@ -68,6 +68,22 @@ resources:
     type: github
     endpoint: rkovaci92
     name: eladshamir/Whisker
+  - repository: StandIn
+    type: github
+    endpoint: rkovaci92
+    name: FuzzySecurity/StandIn
+  - repository: SharpView 
+    type: github
+    endpoint: rkovaci92
+    name: tevora-threat/SharpView
+  - repository: SharpHound 
+    type: github
+    endpoint: rkovaci92
+    name: BloodHoundAD/SharpHound
+  - repository: KeeThief 
+    type: github
+    endpoint: rkovaci92
+    name: GhostPack/KeeThief
 
 trigger:
 - main
@@ -91,6 +107,10 @@ steps:
 - checkout: SharpMiniDump
 - checkout: Internal-Monologue
 - checkout: Whisker
+- checkout: StandIn
+- checkout: SharpView
+- checkout: SharpHound
+- checkout: KeeThief
 - task: NuGetToolInstaller@0
   displayName: Use NuGet 4.4.1
   inputs:
