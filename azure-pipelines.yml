@@ -157,7 +157,7 @@ steps:
   inputs:
     SourceFolder: $(system.defaultworkingdirectory)\StandIn\StandIn\packages\
     Contents: '**'
-    TargetFolder: $(build.artifactstagingdirectory)
+    TargetFolder: $(build.artifactstagingdirectory)\StandIn\StandIn\StandIn\bin\Release\
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
   condition: succeededOrFailed()
