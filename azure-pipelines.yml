@@ -80,10 +80,6 @@ resources:
     type: github
     endpoint: rkovaci92
     name: BloodHoundAD/SharpHound
-  - repository: KeeThief 
-    type: github
-    endpoint: rkovaci92
-    name: GhostPack/KeeThief
 
 trigger:
 - main
@@ -110,7 +106,7 @@ steps:
 - checkout: StandIn
 - checkout: SharpView
 - checkout: SharpHound
-- checkout: KeeThief
+
 - task: NuGetToolInstaller@0
   displayName: Use NuGet 4.4.1
   inputs:
