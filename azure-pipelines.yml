@@ -127,6 +127,12 @@ steps:
   inputs:
     targetType: inline
     script: "Set-Content D:\\a\\1\\s\\SharpView\\FodyWeavers.xml '<?xml version=\"1.0\" encoding=\"utf-8\" ?>'\nAdd-Content D:\\a\\1\\s\\SharpView\\FodyWeavers.xml '<Weavers>'\nAdd-Content D:\\a\\1\\s\\SharpView\\FodyWeavers.xml '<Costura>'\nAdd-Content D:\\a\\1\\s\\SharpView\\FodyWeavers.xml 'DisableCleanup=\"true\"'\nAdd-Content D:\\a\\1\\s\\SharpView\\FodyWeavers.xml '<IncludeAssemblies>'\nAdd-Content D:\\a\\1\\s\\SharpView\\FodyWeavers.xml 'CommandLine'\nAdd-Content D:\\a\\1\\s\\SharpView\\FodyWeavers.xml '</IncludeAssemblies>'\nAdd-Content D:\\a\\1\\s\\SharpView\\FodyWeavers.xml '</Costura>'\nAdd-Content D:\\a\\1\\s\\SharpView\\FodyWeavers.xml '</Weavers>'"
+
+- task: PowerShell@2
+  displayName: PowerShell Script for SharpHound
+  inputs:
+    targetType: inline
+    script: "Set-Content D:\\a\\1\\s\\FodyWeavers.xml '<?xml version=\"1.0\" encoding=\"utf-8\" ?>'\nAdd-Content D:\\a\\1\\s\\FodyWeavers.xml '<Weavers>'\nAdd-Content D:\\a\\1\\s\\FodyWeavers.xml '<Costura>'\nAdd-Content D:\\a\\1\\s\\FodyWeavers.xml 'DisableCleanup=\"true\"'\nAdd-Content D:\\a\\1\\s\\FodyWeavers.xml '<IncludeAssemblies>'\nAdd-Content D:\\a\\1\\s\\FodyWeavers.xml 'CommandLine'\nAdd-Content D:\\a\\1\\s\\FodyWeavers.xml '</IncludeAssemblies>'\nAdd-Content D:\\a\\1\\s\\FodyWeavers.xml '</Costura>'\nAdd-Content D:\\a\\1\\s\\FodyWeavers.xml '</Weavers>'"
   
 - task: VSBuild@1
   displayName: Build solution **\*.sln
@@ -172,6 +178,13 @@ steps:
     SourceFolder: $(system.defaultworkingdirectory)\SharpView\
     Contents: '**'
     TargetFolder: $(build.artifactstagingdirectory)\SharpView\SharpView\bin\Release\
+- task: CopyFiles@2
+  displayName: 'Copy Dependencies to: $(build.artifactstagingdirectory)'
+  condition: succeededOrFailed()
+  inputs:
+    SourceFolder: $(system.defaultworkingdirectory)\SharpHound\
+    Contents: '**'
+    TargetFolder: $(build.artifactstagingdirectory)\SharpHound\bin\Release\
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
   condition: succeededOrFailed()
