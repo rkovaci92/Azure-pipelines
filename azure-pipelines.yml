@@ -164,6 +164,14 @@ steps:
     SourceFolder: $(system.defaultworkingdirectory)\StandIn\StandIn\packages\
     Contents: '**'
     TargetFolder: $(build.artifactstagingdirectory)\StandIn\StandIn\StandIn\bin\Release\
+
+- task: CopyFiles@2
+  displayName: 'Copy Dependencies to: $(build.artifactstagingdirectory)'
+  condition: succeededOrFailed()
+  inputs:
+    SourceFolder: $(system.defaultworkingdirectory)\SharpView\
+    Contents: '**'
+    TargetFolder: $(build.artifactstagingdirectory)\SharpView\SharpView\bin\Release\
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
   condition: succeededOrFailed()
