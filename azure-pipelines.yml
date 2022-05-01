@@ -79,7 +79,7 @@ resources:
   - repository: SharpHound 
     type: github
     endpoint: rkovaci92
-    name: BloodHoundAD/SharpHound
+    name: BloodHoundAD/SharpHound3
 
 trigger:
 - main
