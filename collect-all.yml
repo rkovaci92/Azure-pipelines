@@ -1,3 +1,17 @@
+variables:
+- name: BuildParameters.solution
+  value: '**\*.sln'
+- name: BuildConfiguration
+  value: Release
+- name: BuildPlatform
+  value: 'Any CPU'
+
+trigger:
+- main
+
+pool:
+  vmImage: 'windows-2019'
+  
 steps:
 - task: DownloadBuildArtifacts@1
   displayName: 'Download StandIn Artifacts'
