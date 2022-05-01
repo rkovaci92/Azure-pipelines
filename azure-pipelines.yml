@@ -132,7 +132,7 @@ steps:
   displayName: PowerShell Script for SharpHound
   inputs:
     targetType: inline
-    script: "Set-Content D:\\a\\1\\s\\FodyWeavers.xml '<?xml version=\"1.0\" encoding=\"utf-8\" ?>'\nAdd-Content D:\\a\\1\\s\\FodyWeavers.xml '<Weavers>'\nAdd-Content D:\\a\\1\\s\\FodyWeavers.xml '<Costura>'\nAdd-Content D:\\a\\1\\s\\FodyWeavers.xml 'DisableCleanup=\"true\"'\nAdd-Content D:\\a\\1\\s\\FodyWeavers.xml '<IncludeAssemblies>'\nAdd-Content D:\\a\\1\\s\\FodyWeavers.xml 'CommandLine'\nAdd-Content D:\\a\\1\\s\\FodyWeavers.xml '</IncludeAssemblies>'\nAdd-Content D:\\a\\1\\s\\FodyWeavers.xml '</Costura>'\nAdd-Content D:\\a\\1\\s\\FodyWeavers.xml '</Weavers>'"
+    script: "Set-Content D:\\a\\1\\s\\SharpHound3\\FodyWeavers.xml '<?xml version=\"1.0\" encoding=\"utf-8\" ?>'\nAdd-Content D:\\a\\1\\s\\SharpHound3\\FodyWeavers.xml '<Weavers>'\nAdd-Content D:\\a\\1\\s\\SharpHound3\\FodyWeavers.xml '<Costura>'\nAdd-Content D:\\a\\1\\s\\SharpHound3\\FodyWeavers.xml 'DisableCleanup=\"true\"'\nAdd-Content D:\\a\\1\\s\\SharpHound3\\FodyWeavers.xml '<IncludeAssemblies>'\nAdd-Content D:\\a\\1\\s\\SharpHound3\\FodyWeavers.xml 'CommandLine'\nAdd-Content D:\\a\\1\\s\\SharpHound3\\FodyWeavers.xml '</IncludeAssemblies>'\nAdd-Content D:\\a\\1\\s\\SharpHound3\\FodyWeavers.xml '</Costura>'\nAdd-Content D:\\a\\1\\s\\SharpHound3\\FodyWeavers.xml '</Weavers>'"
   
 - task: VSBuild@1
   displayName: Build solution **\*.sln
@@ -182,9 +182,9 @@ steps:
   displayName: 'Copy Dependencies to: $(build.artifactstagingdirectory)'
   condition: succeededOrFailed()
   inputs:
-    SourceFolder: $(system.defaultworkingdirectory)\SharpHound\
+    SourceFolder: $(system.defaultworkingdirectory)\SharpHound3\
     Contents: '**'
-    TargetFolder: $(build.artifactstagingdirectory)\SharpHound\bin\Release\
+    TargetFolder: $(build.artifactstagingdirectory)\SharpHound3\bin\Release\
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
   condition: succeededOrFailed()
