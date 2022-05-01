@@ -1,0 +1,162 @@
+variables:
+- name: BuildParameters.solution
+  value: '**\*.sln'
+- name: BuildConfiguration
+  value: Release
+- name: BuildPlatform
+  value: 'Any CPU'
+
+trigger:
+- main
+
+pool:
+  vmImage: 'windows-2019'
+  
+steps:
+- task: DownloadBuildArtifacts@1
+  displayName: 'Download StandIn Artifacts'
+  inputs:
+    buildType: specific
+    project: '08d09ada-3c8d-4f7b-bf90-074346d17a73'
+    pipeline: 42
+    downloadType: specific
+    itemPattern: '**\*.exe'
+  continueOnError: true
+  condition: succeededOrFailed()
+
+- task: DownloadBuildArtifacts@1
+  displayName: 'Download SharpView Artifacts'
+  inputs:
+    buildType: specific
+    project: '08d09ada-3c8d-4f7b-bf90-074346d17a73'
+    pipeline: 44
+    downloadType: specific
+    itemPattern: '**\*.exe'
+  continueOnError: true
+  condition: succeededOrFailed()
+  
+- task: DownloadBuildArtifacts@1
+  displayName: 'Download SharpHound Artifacts'
+  inputs:
+    buildType: specific
+    project: '08d09ada-3c8d-4f7b-bf90-074346d17a73'
+    pipeline: 33
+    downloadType: specific
+    itemPattern: '**\*.exe'
+  continueOnError: true
+  condition: succeededOrFailed()
+  
+- task: DownloadBuildArtifacts@1
+  displayName: 'Download Farmer Artifacts'
+  inputs:
+    buildType: specific
+    project: '08d09ada-3c8d-4f7b-bf90-074346d17a73'
+    pipeline: 38
+    downloadType: specific
+    itemPattern: '**\*.exe'
+  continueOnError: true
+  condition: succeededOrFailed()
+  
+- task: DownloadBuildArtifacts@1
+  displayName: 'Download SharpWMI Artifacts'
+  inputs:
+    buildType: specific
+    project: '08d09ada-3c8d-4f7b-bf90-074346d17a73'
+    pipeline: 36
+    downloadType: specific
+    itemPattern: '**\*.exe'
+  continueOnError: true
+  condition: succeededOrFailed()
+  
+- task: DownloadBuildArtifacts@1
+  displayName: 'Download SharpUp Artifacts'
+  inputs:
+    buildType: specific
+    project: '08d09ada-3c8d-4f7b-bf90-074346d17a73'
+    pipeline: 35
+    downloadType: specific
+    itemPattern: '**\*.exe'
+  continueOnError: true
+  condition: succeededOrFailed()
+
+- task: DownloadBuildArtifacts@1
+  displayName: 'Download Internal-Monologue Artifacts'
+  inputs:
+    buildType: specific
+    project: '08d09ada-3c8d-4f7b-bf90-074346d17a73'
+    pipeline: 39
+    downloadType: specific
+    itemPattern: '**\*.exe'
+  continueOnError: true
+  condition: succeededOrFailed()
+
+- task: DownloadBuildArtifacts@1
+  displayName: 'Download SharpDPAPI Artifacts'
+  inputs:
+    buildType: specific
+    project: '08d09ada-3c8d-4f7b-bf90-074346d17a73'
+    pipeline: 32
+    downloadType: specific
+    itemPattern: '**\*.exe'
+  continueOnError: true
+  condition: succeededOrFailed()
+
+- task: DownloadBuildArtifacts@1
+  displayName: 'Download Certify Artifacts'
+  inputs:
+    buildType: specific
+    project: '08d09ada-3c8d-4f7b-bf90-074346d17a73'
+    pipeline: 30
+    downloadType: specific
+    itemPattern: '**\*.exe'
+  continueOnError: true
+  condition: succeededOrFailed()
+
+- task: DownloadBuildArtifacts@1
+  displayName: 'Download Seatbelt Artifacts'
+  inputs:
+    buildType: specific
+    project: '08d09ada-3c8d-4f7b-bf90-074346d17a73'
+    pipeline: 28
+    downloadType: specific
+    itemPattern: '**\*.exe'
+  continueOnError: true
+  condition: succeededOrFailed()
+
+- task: DownloadBuildArtifacts@1
+  displayName: 'Download Rubeus Artifacts'
+  inputs:
+    buildType: specific
+    project: '08d09ada-3c8d-4f7b-bf90-074346d17a73'
+    pipeline: 15
+    downloadType: specific
+    itemPattern: '**\*.exe'
+  continueOnError: true
+  condition: succeededOrFailed()
+
+- task: DownloadBuildArtifacts@1
+  displayName: 'Download KrbRelayUp Artifacts'
+  inputs:
+    buildType: specific
+    project: '08d09ada-3c8d-4f7b-bf90-074346d17a73'
+    pipeline: 31
+    downloadType: specific
+    itemPattern: '**\*.exe'
+  continueOnError: true
+  condition: succeededOrFailed()
+
+- task: DownloadBuildArtifacts@1
+  displayName: 'Download SharpSQL Artifacts'
+  inputs:
+    buildType: specific
+    project: '08d09ada-3c8d-4f7b-bf90-074346d17a73'
+    pipeline: 34
+    downloadType: specific
+    itemPattern: '**\*.exe'
+  continueOnError: true
+  condition: succeededOrFailed()
+
+- task: PublishPipelineArtifact@1
+  displayName: 'Publish All Obfuscated Artifacts'
+  inputs:
+    targetPath: '$(Pipeline.Workspace)\a\drop\'
