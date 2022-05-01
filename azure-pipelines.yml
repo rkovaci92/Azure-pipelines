@@ -252,5 +252,5 @@ steps:
   displayName: 'Publish Artifact: drop'
   condition: succeededOrFailed()
   inputs:
-    PathtoPublish: $(build.artifactstagingdirectory)
+    PathtoPublish: $(build.artifactstagingdirectory)\Confused\
     TargetPath: '\\my\share\$(Build.DefinitionName)\$(Build.BuildNumber)'
