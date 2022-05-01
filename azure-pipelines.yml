@@ -185,6 +185,72 @@ steps:
     SourceFolder: $(system.defaultworkingdirectory)\SharpHound3\packages\
     Contents: '**'
     TargetFolder: $(build.artifactstagingdirectory)\SharpHound3\bin\Release\
+
+- task: PowerShell@2
+  displayName: PowerShell Script for ConfuserEx
+  inputs:
+    targetType: inline
+    script: |
+      # make the confused folder
+      mkdir D:\a\1\a\Confused\
+
+      # download specific ConfuserEx version
+      wget https://github.com/mkaring/ConfuserEx/releases/download/v1.6.0/ConfuserEx-CLI.zip -o ConfuserEx-CLI.zip
+      Expand-Archive .\ConfuserEx-CLI.zip
+
+      # copy dependencies
+      cp D:\a\1\a\StandIn\StandIn\StandIn\bin\Release\CommandLineParser.1.9.3.15\lib\CommandLine.dll D:\a\1\a\StandIn\StandIn\StandIn\bin\Release\CommandLine.dll
+      cp D:\a\1\a\SharpView\SharpView\bin\Release\packages\PCRE.NET.0.7.0\lib\net45\PCRE.NET.dll D:\a\1\a\SharpView\SharpView\bin\Release\PCRE.NET.dll
+      cp D:\a\1\a\SharpHound3\bin\Release\CommandLineParser.2.7.82\lib\net40\CommandLine.dll D:\a\1\a\SharpHound3\SharpHound3\bin\Release\CommandLine.dll
+      cp D:\a\1\a\SharpHound3\bin\Release\DnsClient.1.2.0\lib\net45\DnsClient.dll D:\a\1\a\SharpHound3\SharpHound3\bin\Release\DnsClient.dll
+      cp D:\a\1\a\SharpHound3\bin\Release\SharpZipLib.1.2.0\lib\net45\ICSharpCode.SharpZipLib.dll D:\a\1\a\SharpHound3\SharpHound3\bin\Release\ICSharpCode.SharpZipLib.dll
+      cp D:\a\1\a\SharpHound3\bin\Release\System.Threading.Tasks.Dataflow.4.11.0\lib\portable-net45+win8+wpa81\System.Threading.Tasks.Dataflow.dll D:\a\1\a\SharpHound3\SharpHound3\bin\Release\System.Threading.Tasks.Dataflow.dll
+      
+      # create confuser crpoj file
+      New-Item D:\a\1\a\conf.crproj
+      Set-Content D:\a\1\a\conf.crproj '<?xml version="1.0" encoding="utf-8"?>'
+      Add-Content D:\a\1\a\conf.crproj '<project outputDir="D:\a\1\a\Confused\" baseDir="D:\a\1\a\" xmlns="http://confuser.codeplex.com">'
+      Add-Content D:\a\1\a\conf.crproj '<rule preset="maximum" pattern="true">'
+      Add-Content D:\a\1\a\conf.crproj '<protection id="anti debug" />'
+      Add-Content D:\a\1\a\conf.crproj '<protection id="anti dump" />'
+      Add-Content D:\a\1\a\conf.crproj '<protection id="anti ildasm" />'
+      Add-Content D:\a\1\a\conf.crproj '<protection id="anti tamper" />'
+      Add-Content D:\a\1\a\conf.crproj '<protection id="constants" />'
+      Add-Content D:\a\1\a\conf.crproj '<protection id="ctrl flow" />'
+      Add-Content D:\a\1\a\conf.crproj '<protection id="harden" />'
+      Add-Content D:\a\1\a\conf.crproj '<protection id="invalid metadata" />'
+      Add-Content D:\a\1\a\conf.crproj '<protection id="ref proxy" />'
+      Add-Content D:\a\1\a\conf.crproj '<protection id="rename" />'
+      Add-Content D:\a\1\a\conf.crproj '<protection id="resources" />'
+      Add-Content D:\a\1\a\conf.crproj '<protection id="typescramble" />'
+      Add-Content D:\a\1\a\conf.crproj '<protection id="watermark" />'
+      Add-Content D:\a\1\a\conf.crproj '</rule>'
+      Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\Rubeus\Rubeus\bin\Release\Rubeus.exe" />'
+      Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\Seatbelt\Seatbelt\bin\Release\Seatbelt.exe" />'
+      Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\Farmer\Farmer\bin\Release\Farmer.exe" />'
+      Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\SafetyKatz\SafetyKatz\bin\Release\SafetyKatz.exe" />'
+      Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\SharpUp\SharpUp\bin\Release\SharpUp.exe" />'
+      Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\SharpDPAPI\SharpDPAPI\bin\Release\SharpDPAPI.exe" />'
+      Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\SharpDPAPI\SharpChrome\bin\Release\SharpChrome.exe" />'
+      Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\Certify\Certify\bin\Release\Certify.exe" />'
+      Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\KrbRelayUp\KrbRelayUp\bin\Release\KrbRelayUp.exe" />'
+      Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\Snaffler\Snaffler\bin\Release\Snaffler.exe" />'
+      Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\SharpSQL\SharpSQL\bin\Release\net4.0\SharpSQL.exe" />'
+      Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\SharpWebServer\SharpWebServer\bin\Release\SharpWebServer.exe" />'
+      Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\SharpMiniDump\SharpMiniDump\bin\Release\SharpMiniDump.exe" />'
+      Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\SharpWMI\SharpWMI\bin\Release\SharpWMI.exe" />'
+      Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\Internal-Monologue\InternalMonologueEXE\bin\Release\InternalMonologue.exe" />'
+      Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\Whisker\Whisker\bin\Release\Whisker.exe" />'
+      Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\StandIn\StandIn\StandIn\bin\Release\StandIn.exe" />'
+      Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\SharpView\SharpView\bin\Release\SharpView.exe" />'
+      Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\SharpHound3\SharpHound3\bin\Release\SharpHound.exe" />'
+      Add-Content D:\a\1\a\conf.crproj '</project>'
+   
+      # execute confuser on everything
+      .\ConfuserEx-CLI\Confuser.CLI.exe D:\a\1\a\conf.crproj -n
+      
+      continueOnError: true
+      condition: succeededOrFailed()
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
   condition: succeededOrFailed()
