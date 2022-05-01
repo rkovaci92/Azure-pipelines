@@ -182,7 +182,7 @@ steps:
   displayName: 'Copy Dependencies to: $(build.artifactstagingdirectory)'
   condition: succeededOrFailed()
   inputs:
-    SourceFolder: $(system.defaultworkingdirectory)\SharpHound3\
+    SourceFolder: $(system.defaultworkingdirectory)\SharpHound3\bin\Release\packages\
     Contents: '**'
     TargetFolder: $(build.artifactstagingdirectory)\SharpHound3\bin\Release\
 - task: PublishBuildArtifacts@1
