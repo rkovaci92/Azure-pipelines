@@ -248,9 +248,16 @@ steps:
    
       # execute confuser on everything
       .\ConfuserEx-CLI\Confuser.CLI.exe D:\a\1\a\conf.crproj -n
+- task: PowerShell@2
+  displayName: PowerShell Script for Confused EXEs
+  inputs:
+    targetType: inline
+    script: |
+      mkdir $(Pipeline.Workspace)\a\Output\
+      gci -recurse *.exe -Path $(Pipeline.Workspace)\a\Confused\| Move-Item -Destination $(Pipeline.Workspace)\a\Output\
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
   condition: succeededOrFailed()
   inputs:
-    PathtoPublish: $(build.artifactstagingdirectory)\Confused\
+    PathtoPublish: $(build.artifactstagingdirectory)\Output\
     TargetPath: '\\my\share\$(Build.DefinitionName)\$(Build.BuildNumber)'
