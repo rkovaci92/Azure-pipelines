@@ -80,7 +80,7 @@ resources:
     type: github
     endpoint: rkovaci92
     name: BloodHoundAD/SharpHound3
-  - repository: KrbRelayUp
+  - repository: KrbRelay
     type: github
     endpoint: rkovaci92
     name: cube0x0/KrbRelay
