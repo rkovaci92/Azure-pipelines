@@ -80,6 +80,38 @@ resources:
     type: github
     endpoint: rkovaci92
     name: BloodHoundAD/SharpHound3
+  - repository: KrbRelayUp
+    type: github
+    endpoint: rkovaci92
+    name: cube0x0/KrbRelay
+  - repository: MalSCCM
+    type: github
+    endpoint: rkovaci92
+    name: nettitude/MalSCCM
+  - repository: SharpWSUS
+    type: github
+    endpoint: rkovaci92
+    name: nettitude/SharpWSUS
+  - repository: Group3r
+    type: github
+    endpoint: rkovaci92
+    name: Group3r/Group3r
+  - repository: netsh_acl_enumerator
+    type: github
+    endpoint: rkovaci92
+    name: leftp/netsh_acl_enumerator
+  - repository: noPac
+    type: github
+    endpoint: rkovaci92
+    name: cube0x0/noPac
+  - repository: SharpLAPS
+    type: github
+    endpoint: rkovaci92
+    name: swisskyrepo/SharpLAPS
+  - repository: DumpAADSyncCreds
+    type: github
+    endpoint: rkovaci92
+    name: Hagrid29/DumpAADSyncCreds
 
 trigger:
 - main
@@ -96,6 +128,7 @@ steps:
 - checkout: SharpDPAPI
 - checkout: Certify
 - checkout: KrbRelayUp
+- checkout: KrbRelay
 - checkout: Snaffler
 - checkout: SharpSQL
 - checkout: SharpWebServer
@@ -106,6 +139,13 @@ steps:
 - checkout: StandIn
 - checkout: SharpView
 - checkout: SharpHound
+- checkout: MalSCCM
+- checkout: SharpWSUS
+- checkout: Group3r
+- checkout: netsh_acl_enumerator
+- checkout: noPac
+- checkout: SharpLAPS
+- checkout: DumpAADSyncCreds
 
 - task: NuGetToolInstaller@0
   displayName: Use NuGet 4.4.1
