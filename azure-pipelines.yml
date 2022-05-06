@@ -111,7 +111,7 @@ resources:
   - repository: DumpAADSyncCreds
     type: github
     endpoint: rkovaci92
-    name: Hagrid29/DumpAADSyncCreds
+    name: leftp/DumpAADSyncCreds
 
 trigger:
 - main
