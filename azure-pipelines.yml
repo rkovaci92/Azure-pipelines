@@ -141,7 +141,6 @@ steps:
 - checkout: netsh_acl_enumerator
 - checkout: noPac
 - checkout: SharpLAPS
-- checkout: DumpAADSyncCreds
 
 - task: NuGetToolInstaller@0
   displayName: Use NuGet 4.4.1
