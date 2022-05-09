@@ -306,10 +306,10 @@ steps:
       Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\SharpSystemTriggers\SharpDcomTrigger\bin\Release\SharpDcomTrigger.exe" />'
       Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\SharpSystemTriggers\SharpEfsTrigger\bin\Release\SharpEfsTrigger.exe" />'
       Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\SharpSystemTriggers\SharpSpoolTrigger\bin\Release\SharpSpoolTrigger.exe" />'
-      Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\ROADtoken\ROADtoken\bin\Release\ROADtoken.exe" />'
+      Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\ROADtoken\bin\Release\ROADtoken.exe" />'
       Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\RequestAADRefreshToken\RequestAADRefreshToken\bin\Release\RequestAADRefreshToken.exe" />'
       Add-Content D:\a\1\a\conf.crproj '</project>'
-   
+ 
       # execute confuser on everything
       .\ConfuserEx-CLI\Confuser.CLI.exe D:\a\1\a\conf.crproj -n
 - task: PowerShell@2
