@@ -112,6 +112,14 @@ resources:
     type: github
     endpoint: rkovaci92
     name: cube0x0/SharpSystemTriggers
+  - repository: RequestAADRefreshToken
+    type: github
+    endpoint: rkovaci92
+    name: leechristensen/RequestAADRefreshToken
+  - repository: ROADtoken
+    type: github
+    endpoint: rkovaci92
+    name: dirkjanm/ROADtoken
 
 trigger:
 - main
@@ -146,6 +154,8 @@ steps:
 - checkout: noPac
 - checkout: SharpLAPS
 - checkout: SharpSystemTriggers
+- checkout: ROADtoken
+- checkout: RequestAADRefreshToken
 
 - task: NuGetToolInstaller@0
   displayName: Use NuGet 4.4.1
@@ -296,6 +306,8 @@ steps:
       Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\SharpSystemTriggers\SharpDcomTrigger\bin\Release\SharpDcomTrigger.exe" />'
       Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\SharpSystemTriggers\SharpEfsTrigger\bin\Release\SharpEfsTrigger.exe" />'
       Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\SharpSystemTriggers\SharpSpoolTrigger\bin\Release\SharpSpoolTrigger.exe" />'
+      Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\ROADtoken\ROADtoken\bin\Release\ROADtoken.exe" />'
+      Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\RequestAADRefreshToken\RequestAADRefreshToken\bin\Release\RequestAADRefreshToken.exe" />'
       Add-Content D:\a\1\a\conf.crproj '</project>'
    
       # execute confuser on everything
