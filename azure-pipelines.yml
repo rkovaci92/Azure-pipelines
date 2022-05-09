@@ -120,6 +120,10 @@ resources:
     type: github
     endpoint: rkovaci92
     name: dirkjanm/ROADtoken
+  - repository: LiquidSnake
+    type: github
+    endpoint: rkovaci92
+    name: RiccardoAncarani/LiquidSnake
 
 trigger:
 - main
@@ -156,6 +160,7 @@ steps:
 - checkout: SharpSystemTriggers
 - checkout: ROADtoken
 - checkout: RequestAADRefreshToken
+- checkout: LiquidSnake
 
 - task: NuGetToolInstaller@0
   displayName: Use NuGet 4.4.1
@@ -308,8 +313,11 @@ steps:
       Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\SharpSystemTriggers\SharpSpoolTrigger\bin\Release\SharpSpoolTrigger.exe" />'
       Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\ROADtoken\bin\Release\ROADtoken.exe" />'
       Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\RequestAADRefreshToken\RequestAADRefreshToken\bin\Release\RequestAADRefreshToken.exe" />'
+      Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\LiquidSnake\CSharpNamedPipeLoader\CSharpNamedPipeLoader\bin\Release\CSharpNamedPipeLoader.exe" />'
+      Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\LiquidSnake\LiquidSnake\LiquidSnake\bin\Release\LiquidSnake.exe" />'
       Add-Content D:\a\1\a\conf.crproj '</project>'
  
+
       # execute confuser on everything
       .\ConfuserEx-CLI\Confuser.CLI.exe D:\a\1\a\conf.crproj -n
 - task: PowerShell@2
