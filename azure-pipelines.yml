@@ -278,7 +278,7 @@ steps:
       Add-Content D:\a\1\a\conf.crproj '<protection id="rename" />'
       Add-Content D:\a\1\a\conf.crproj '<protection id="resources" />'
       Add-Content D:\a\1\a\conf.crproj '<protection id="typescramble" />'
-      Add-Content D:\a\1\a\conf.crproj '<protection id="watermark" />'
+      Add-Content D:\a\1\a\conf.crproj '<protection id="watermark" action="remove" />'
       Add-Content D:\a\1\a\conf.crproj '</rule>'
       Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\Rubeus\Rubeus\bin\Release\Rubeus.exe" />'
       Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\Seatbelt\Seatbelt\bin\Release\Seatbelt.exe" />'
