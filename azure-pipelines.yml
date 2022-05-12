@@ -124,7 +124,10 @@ resources:
     type: github
     endpoint: rkovaci92
     name: RiccardoAncarani/LiquidSnake
-
+  - repository: SearchOutlook
+    type: github
+    endpoint: rkovaci92
+    name: RedLectroid/SearchOutlook
 trigger:
 - main
 
@@ -161,6 +164,7 @@ steps:
 - checkout: ROADtoken
 - checkout: RequestAADRefreshToken
 - checkout: LiquidSnake
+- checkout: SearchOutlook
 
 - task: NuGetToolInstaller@0
   displayName: Use NuGet 4.4.1
@@ -315,6 +319,7 @@ steps:
       Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\RequestAADRefreshToken\RequestAADRefreshToken\bin\Release\RequestAADRefreshToken.exe" />'
       Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\LiquidSnake\CSharpNamedPipeLoader\CSharpNamedPipeLoader\bin\Release\CSharpNamedPipeLoader.exe" />'
       Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\LiquidSnake\LiquidSnake\LiquidSnake\bin\Release\LiquidSnake.exe" />'
+      Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\SearchOutlook\SearchOutlook\bin\Release\SearchOutlook.exe" />'
       Add-Content D:\a\1\a\conf.crproj '</project>'
  
 
