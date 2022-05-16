@@ -1,3 +1,5 @@
+# Author: Roxana Kovaci
+
 variables:
 - name: BuildParameters.solution
   value: '**\*.sln'
@@ -8,6 +10,10 @@ variables:
 
 resources:
   repositories:
+  - repository: InvisibilityCloak
+    type: github
+    endpoint: rkovaci92
+    name: xforcered/InvisibilityCloak
   - repository: Farmer 
     type: github
     endpoint: rkovaci92
@@ -133,6 +139,7 @@ resources:
     endpoint: rkovaci92
     name: shantanu561993/SharpChisel
 
+
 trigger:
 - main
 
@@ -171,6 +178,7 @@ steps:
 - checkout: LiquidSnake
 - checkout: SearchOutlook
 - checkout: SharpChisel
+- checkout: InvisibilityCloak
 
 - task: NuGetToolInstaller@0
   displayName: Use NuGet 4.4.1
