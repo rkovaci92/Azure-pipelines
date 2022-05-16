@@ -322,7 +322,7 @@ steps:
       Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $cf)' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $kru)' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $sf)' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $sql)' />"
+      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpSQL\SharpSQL\bin\Release\net4.0\SharpSQL.exe' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $sw)' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $smd)' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $swmi)' />"
