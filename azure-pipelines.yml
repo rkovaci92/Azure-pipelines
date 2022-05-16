@@ -255,15 +255,15 @@ steps:
       $sv = "D:\a\1\a\SharpView\*\bin\Release\*.exe"
       $svf = (ls $sv).Name
       $svy = ($svf -split ".exe")[0]
-      cp D:\a\1\s\SharpView\SharpView\bin\Release\packages\PCRE.NET.0.7.0\lib\net45\PCRE.NET.dll D:\a\1\a\SharpView\$svy\bin\Release\PCRE.NET.dll
+      cp D:\a\1\s\SharpView\packages\PCRE.NET.0.7.0\lib\net45\PCRE.NET.dll D:\a\1\a\SharpView\$svy\bin\Release\PCRE.NET.dll
 
       $sh = "D:\a\1\a\SharpHound3\*\bin\Release\*.exe"
       $shf = (ls $sh).Name
       $shy = ($shf -split ".exe")[0]
-      cp D:\a\1\s\SharpHound3\bin\Release\CommandLineParser.2.7.82\lib\net40\CommandLine.dll D:\a\1\a\SharpHound3\$shy\bin\Release\CommandLine.dll
-      cp D:\a\1\s\SharpHound3\bin\Release\DnsClient.1.2.0\lib\net45\DnsClient.dll D:\a\1\a\SharpHound3\$shy\bin\Release\DnsClient.dll
-      cp D:\a\1\s\SharpHound3\bin\Release\SharpZipLib.1.2.0\lib\net45\ICSharpCode.SharpZipLib.dll D:\a\1\a\SharpHound3\$shy\bin\Release\ICSharpCode.SharpZipLib.dll
-      cp D:\a\1\s\SharpHound3\bin\Release\System.Threading.Tasks.Dataflow.4.11.0\lib\portable-net45+win8+wpa81\System.Threading.Tasks.Dataflow.dll D:\a\1\a\SharpHound3\$shy\bin\Release\System.Threading.Tasks.Dataflow.dll
+      cp D:\a\1\s\SharpHound3\packages\DnsClient.1.2.0\lib\net45\CommandLine.dll D:\a\1\a\SharpHound3\$shy\bin\Release\CommandLine.dll
+      cp D:\a\1\s\SharpHound3\packages\DnsClient.1.2.0\lib\net45\DnsClient.dll D:\a\1\a\SharpHound3\$shy\bin\Release\DnsClient.dll
+      cp D:\a\1\s\SharpHound3\packages\SharpZipLib.1.2.0\lib\net45\ICSharpCode.SharpZipLib.dll D:\a\1\a\SharpHound3\$shy\bin\Release\ICSharpCode.SharpZipLib.dll
+      cp D:\a\1\s\SharpHound3\packages\System.Threading.Tasks.Dataflow.4.11.0\lib\portable-net45+win8+wpa81\System.Threading.Tasks.Dataflow.dll D:\a\1\a\SharpHound3\$shy\bin\Release\System.Threading.Tasks.Dataflow.dll
       
       # renamed binaries
       $rb = "D:\a\1\a\Rubeus\*\bin\Release\*.exe"
