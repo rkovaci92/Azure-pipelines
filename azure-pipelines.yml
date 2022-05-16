@@ -10,124 +10,129 @@ resources:
   repositories:
   - repository: Farmer 
     type: github
-    endpoint: rkovaci92
+    endpoint: RoxanaKovaci
     name: mdsecactivebreach/Farmer
   - repository: Rubeus
     type: github
-    endpoint: rkovaci92
+    endpoint: RoxanaKovaci
     name: GhostPack/Rubeus
   - repository: Seatbelt 
     type: github
-    endpoint: rkovaci92
+    endpoint: RoxanaKovaci
     name: GhostPack/Seatbelt
   - repository: SafetyKatz 
     type: github
-    endpoint: rkovaci92
+    endpoint: RoxanaKovaci
     name: GhostPack/SafetyKatz
   - repository: SharpUp
     type: github
-    endpoint: rkovaci92
+    endpoint: RoxanaKovaci
     name: GhostPack/SharpUp
   - repository: SharpDPAPI 
     type: github
-    endpoint: rkovaci92
+    endpoint: RoxanaKovaci
     name: GhostPack/SharpDPAPI
   - repository: Certify 
     type: github
-    endpoint: rkovaci92
+    endpoint: RoxanaKovaci
     name: GhostPack/Certify
   - repository: KrbRelayUp
     type: github
-    endpoint: rkovaci92
+    endpoint: RoxanaKovaci
     name: Dec0ne/KrbRelayUp
   - repository: Snaffler 
     type: github
-    endpoint: rkovaci92
+    endpoint: RoxanaKovaci
     name: SnaffCon/Snaffler
   - repository: SharpSQL 
     type: github
-    endpoint: rkovaci92
+    endpoint: RoxanaKovaci
     name: mlcsec/SharpSQL
   - repository: SharpWebServer
     type: github
-    endpoint: rkovaci92
+    endpoint: RoxanaKovaci
     name: mgeeky/SharpWebServer
   - repository: SharpWMI 
     type: github
-    endpoint: rkovaci92
+    endpoint: RoxanaKovaci
     name: GhostPack/SharpWMI
   - repository: SharpMiniDump
     type: github
-    endpoint: rkovaci92
+    endpoint: RoxanaKovaci
     name: b4rtik/SharpMiniDump
   - repository: Internal-Monologue 
     type: github
-    endpoint: rkovaci92
+    endpoint: RoxanaKovaci
     name: eladshamir/Internal-Monologue
   - repository: Whisker 
     type: github
-    endpoint: rkovaci92
+    endpoint: RoxanaKovaci
     name: eladshamir/Whisker
   - repository: StandIn
     type: github
-    endpoint: rkovaci92
+    endpoint: RoxanaKovaci
     name: FuzzySecurity/StandIn
   - repository: SharpView 
     type: github
-    endpoint: rkovaci92
+    endpoint: RoxanaKovaci
     name: tevora-threat/SharpView
   - repository: SharpHound 
     type: github
-    endpoint: rkovaci92
+    endpoint: RoxanaKovaci
     name: BloodHoundAD/SharpHound3
   - repository: KrbRelay
     type: github
-    endpoint: rkovaci92
+    endpoint: RoxanaKovaci
     name: cube0x0/KrbRelay
   - repository: MalSCCM
     type: github
-    endpoint: rkovaci92
+    endpoint: RoxanaKovaci
     name: nettitude/MalSCCM
   - repository: SharpWSUS
     type: github
-    endpoint: rkovaci92
+    endpoint: RoxanaKovaci
     name: nettitude/SharpWSUS
   - repository: Group3r
     type: github
-    endpoint: rkovaci92
+    endpoint: RoxanaKovaci
     name: Group3r/Group3r
   - repository: netsh_acl_enumerator
     type: github
-    endpoint: rkovaci92
+    endpoint: RoxanaKovaci
     name: leftp/netsh_acl_enumerator
   - repository: noPac
     type: github
-    endpoint: rkovaci92
+    endpoint: RoxanaKovaci
     name: cube0x0/noPac
   - repository: SharpLAPS
     type: github
-    endpoint: rkovaci92
+    endpoint: RoxanaKovaci
     name: swisskyrepo/SharpLAPS
   - repository: SharpSystemTriggers
     type: github
-    endpoint: rkovaci92
+    endpoint: RoxanaKovaci
     name: cube0x0/SharpSystemTriggers
   - repository: RequestAADRefreshToken
     type: github
-    endpoint: rkovaci92
+    endpoint: RoxanaKovaci
     name: leechristensen/RequestAADRefreshToken
   - repository: ROADtoken
     type: github
-    endpoint: rkovaci92
+    endpoint: RoxanaKovaci
     name: dirkjanm/ROADtoken
   - repository: LiquidSnake
     type: github
-    endpoint: rkovaci92
+    endpoint: RoxanaKovaci
     name: RiccardoAncarani/LiquidSnake
   - repository: SearchOutlook
     type: github
-    endpoint: rkovaci92
+    endpoint: RoxanaKovaci
     name: RedLectroid/SearchOutlook
+  - repository: SharpChisel
+    type: github
+    endpoint: RoxanaKovaci
+    name: shantanu561993/SharpChisel
+
 trigger:
 - main
 
@@ -165,6 +170,7 @@ steps:
 - checkout: RequestAADRefreshToken
 - checkout: LiquidSnake
 - checkout: SearchOutlook
+- checkout: SharpChisel
 
 - task: NuGetToolInstaller@0
   displayName: Use NuGet 4.4.1
@@ -320,6 +326,7 @@ steps:
       Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\LiquidSnake\CSharpNamedPipeLoader\CSharpNamedPipeLoader\bin\Release\CSharpNamedPipeLoader.exe" />'
       Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\LiquidSnake\LiquidSnake\LiquidSnake\bin\Release\LiquidSnake.exe" />'
       Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\SearchOutlook\SearchOutlook\bin\Release\SearchOutlook.exe" />'
+      Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\SharpChisel\SharpChisel\bin\Release\SharpChisel.exe" />'
       Add-Content D:\a\1\a\conf.crproj '</project>'
  
 
