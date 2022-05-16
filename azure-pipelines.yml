@@ -253,7 +253,7 @@ steps:
       cp D:\a\1\s\StandIn\packages\CommandLineParser.1.9.3.15\lib\CommandLine.dll D:\a\1\a\StandIn\$sty\bin\Release\CommandLine.dll
 
       $sv = "D:\a\1\a\SharpView\*\bin\Release\*.exe"
-      $svf (ls $sv).Name
+      $svf = (ls $sv).Name
       $svy = ($svf -split ".exe")[0]
       cp D:\a\1\s\SharpView\SharpView\bin\Release\packages\PCRE.NET.0.7.0\lib\net45\PCRE.NET.dll D:\a\1\a\SharpView\$svy\bin\Release\PCRE.NET.dll
 
