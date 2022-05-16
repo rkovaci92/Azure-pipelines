@@ -10,10 +10,6 @@ variables:
 
 resources:
   repositories:
-  - repository: InvisibilityCloak
-    type: github
-    endpoint: rkovaci92
-    name: xforcered/InvisibilityCloak
   - repository: Farmer 
     type: github
     endpoint: rkovaci92
@@ -139,7 +135,6 @@ resources:
     endpoint: rkovaci92
     name: shantanu561993/SharpChisel
 
-
 trigger:
 - main
 
@@ -178,7 +173,6 @@ steps:
 - checkout: LiquidSnake
 - checkout: SearchOutlook
 - checkout: SharpChisel
-- checkout: InvisibilityCloak
 
 - task: NuGetToolInstaller@0
   displayName: Use NuGet 4.4.1
@@ -252,30 +246,6 @@ steps:
     SourceFolder: $(system.defaultworkingdirectory)
     Contents: '**\bin\$(BuildConfiguration)\**'
     TargetFolder: $(build.artifactstagingdirectory)
-
-- task: CopyFiles@2
-  displayName: 'Copy Dependencies to: $(build.artifactstagingdirectory)'
-  condition: succeededOrFailed()
-  inputs:
-    SourceFolder: $(system.defaultworkingdirectory)\StandIn\StandIn\packages\
-    Contents: '**'
-    TargetFolder: $(build.artifactstagingdirectory)\StandIn\StandIn\StandIn\bin\Release\
-
-- task: CopyFiles@2
-  displayName: 'Copy Dependencies to: $(build.artifactstagingdirectory)'
-  condition: succeededOrFailed()
-  inputs:
-    SourceFolder: $(system.defaultworkingdirectory)\SharpView\
-    Contents: '**'
-    TargetFolder: $(build.artifactstagingdirectory)\SharpView\SharpView\bin\Release\
-- task: CopyFiles@2
-  displayName: 'Copy Dependencies to: $(build.artifactstagingdirectory)'
-  condition: succeededOrFailed()
-  inputs:
-    SourceFolder: $(system.defaultworkingdirectory)\SharpHound3\packages\
-    Contents: '**'
-    TargetFolder: $(build.artifactstagingdirectory)\SharpHound3\bin\Release\
-
 - task: PowerShell@2
   displayName: PowerShell Script for ConfuserEx
   inputs:
@@ -352,6 +322,7 @@ steps:
       Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $cf)' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $kru)' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $sf)' />"
+      Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $sql)' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $sw)' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $smd)' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $swmi)' />"
