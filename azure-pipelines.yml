@@ -10,127 +10,127 @@ resources:
   repositories:
   - repository: Farmer 
     type: github
-    endpoint: RoxanaKovaci
+    endpoint: rkovaci92
     name: mdsecactivebreach/Farmer
   - repository: Rubeus
     type: github
-    endpoint: RoxanaKovaci
+    endpoint: rkovaci92
     name: GhostPack/Rubeus
   - repository: Seatbelt 
     type: github
-    endpoint: RoxanaKovaci
+    endpoint: rkovaci92
     name: GhostPack/Seatbelt
   - repository: SafetyKatz 
     type: github
-    endpoint: RoxanaKovaci
+    endpoint: rkovaci92
     name: GhostPack/SafetyKatz
   - repository: SharpUp
     type: github
-    endpoint: RoxanaKovaci
+    endpoint: rkovaci92
     name: GhostPack/SharpUp
   - repository: SharpDPAPI 
     type: github
-    endpoint: RoxanaKovaci
+    endpoint: rkovaci92
     name: GhostPack/SharpDPAPI
   - repository: Certify 
     type: github
-    endpoint: RoxanaKovaci
+    endpoint: rkovaci92
     name: GhostPack/Certify
   - repository: KrbRelayUp
     type: github
-    endpoint: RoxanaKovaci
+    endpoint: rkovaci92
     name: Dec0ne/KrbRelayUp
   - repository: Snaffler 
     type: github
-    endpoint: RoxanaKovaci
+    endpoint: rkovaci92
     name: SnaffCon/Snaffler
   - repository: SharpSQL 
     type: github
-    endpoint: RoxanaKovaci
+    endpoint: rkovaci92
     name: mlcsec/SharpSQL
   - repository: SharpWebServer
     type: github
-    endpoint: RoxanaKovaci
+    endpoint: rkovaci92
     name: mgeeky/SharpWebServer
   - repository: SharpWMI 
     type: github
-    endpoint: RoxanaKovaci
+    endpoint: rkovaci92
     name: GhostPack/SharpWMI
   - repository: SharpMiniDump
     type: github
-    endpoint: RoxanaKovaci
+    endpoint: rkovaci92
     name: b4rtik/SharpMiniDump
   - repository: Internal-Monologue 
     type: github
-    endpoint: RoxanaKovaci
+    endpoint: rkovaci92
     name: eladshamir/Internal-Monologue
   - repository: Whisker 
     type: github
-    endpoint: RoxanaKovaci
+    endpoint: rkovaci92
     name: eladshamir/Whisker
   - repository: StandIn
     type: github
-    endpoint: RoxanaKovaci
+    endpoint: rkovaci92
     name: FuzzySecurity/StandIn
   - repository: SharpView 
     type: github
-    endpoint: RoxanaKovaci
+    endpoint: rkovaci92
     name: tevora-threat/SharpView
   - repository: SharpHound 
     type: github
-    endpoint: RoxanaKovaci
+    endpoint: rkovaci92
     name: BloodHoundAD/SharpHound3
   - repository: KrbRelay
     type: github
-    endpoint: RoxanaKovaci
+    endpoint: rkovaci92
     name: cube0x0/KrbRelay
   - repository: MalSCCM
     type: github
-    endpoint: RoxanaKovaci
+    endpoint: rkovaci92
     name: nettitude/MalSCCM
   - repository: SharpWSUS
     type: github
-    endpoint: RoxanaKovaci
+    endpoint: rkovaci92
     name: nettitude/SharpWSUS
   - repository: Group3r
     type: github
-    endpoint: RoxanaKovaci
+    endpoint: rkovaci92
     name: Group3r/Group3r
   - repository: netsh_acl_enumerator
     type: github
-    endpoint: RoxanaKovaci
+    endpoint: rkovaci92
     name: leftp/netsh_acl_enumerator
   - repository: noPac
     type: github
-    endpoint: RoxanaKovaci
+    endpoint: rkovaci92
     name: cube0x0/noPac
   - repository: SharpLAPS
     type: github
-    endpoint: RoxanaKovaci
+    endpoint: rkovaci92
     name: swisskyrepo/SharpLAPS
   - repository: SharpSystemTriggers
     type: github
-    endpoint: RoxanaKovaci
+    endpoint: rkovaci92
     name: cube0x0/SharpSystemTriggers
   - repository: RequestAADRefreshToken
     type: github
-    endpoint: RoxanaKovaci
+    endpoint: rkovaci92
     name: leechristensen/RequestAADRefreshToken
   - repository: ROADtoken
     type: github
-    endpoint: RoxanaKovaci
+    endpoint: rkovaci92
     name: dirkjanm/ROADtoken
   - repository: LiquidSnake
     type: github
-    endpoint: RoxanaKovaci
+    endpoint: rkovaci92
     name: RiccardoAncarani/LiquidSnake
   - repository: SearchOutlook
     type: github
-    endpoint: RoxanaKovaci
+    endpoint: rkovaci92
     name: RedLectroid/SearchOutlook
   - repository: SharpChisel
     type: github
-    endpoint: RoxanaKovaci
+    endpoint: rkovaci92
     name: shantanu561993/SharpChisel
 
 trigger:
