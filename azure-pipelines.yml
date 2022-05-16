@@ -73,15 +73,15 @@ resources:
   - repository: StandIn
     type: github
     endpoint: rkovaci92
-    name: FuzzySecurity/StandIn
+    name: RoxanaKovaci/StandIn
   - repository: SharpView 
     type: github
     endpoint: rkovaci92
-    name: tevora-threat/SharpView
+    name: RoxanaKovaci/SharpView
   - repository: SharpHound 
     type: github
     endpoint: rkovaci92
-    name: BloodHoundAD/SharpHound3
+    name: RoxanaKovaci/SharpHound3
   - repository: KrbRelay
     type: github
     endpoint: rkovaci92
@@ -185,24 +185,6 @@ steps:
 
 - task: UsePythonVersion@0
   displayName: 'Use Python 3.x'
-- task: PowerShell@2
-  displayName: PowerShell Script for StandIn
-  inputs:
-    targetType: inline
-    script: "Set-Content D:\\a\\1\\s\\StandIn\\StandIn\\FodyWeavers.xml '<?xml version=\"1.0\" encoding=\"utf-8\" ?>'\nAdd-Content D:\\a\\1\\s\\StandIn\\StandIn\\FodyWeavers.xml '<Weavers>'\nAdd-Content D:\\a\\1\\s\\StandIn\\StandIn\\FodyWeavers.xml '<Costura>'\nAdd-Content D:\\a\\1\\s\\StandIn\\StandIn\\FodyWeavers.xml 'DisableCleanup=\"true\"'\nAdd-Content D:\\a\\1\\s\\StandIn\\StandIn\\FodyWeavers.xml '<IncludeAssemblies>'\nAdd-Content D:\\a\\1\\s\\StandIn\\StandIn\\FodyWeavers.xml 'CommandLine'\nAdd-Content D:\\a\\1\\s\\StandIn\\StandIn\\FodyWeavers.xml '</IncludeAssemblies>'\nAdd-Content D:\\a\\1\\s\\StandIn\\StandIn\\FodyWeavers.xml '</Costura>'\nAdd-Content D:\\a\\1\\s\\StandIn\\StandIn\\FodyWeavers.xml '</Weavers>'"
-  
-- task: PowerShell@2
-  displayName: PowerShell Script for SharpView
-  inputs:
-    targetType: inline
-    script: "Set-Content D:\\a\\1\\s\\SharpView\\FodyWeavers.xml '<?xml version=\"1.0\" encoding=\"utf-8\" ?>'\nAdd-Content D:\\a\\1\\s\\SharpView\\FodyWeavers.xml '<Weavers>'\nAdd-Content D:\\a\\1\\s\\SharpView\\FodyWeavers.xml '<Costura>'\nAdd-Content D:\\a\\1\\s\\SharpView\\FodyWeavers.xml 'DisableCleanup=\"true\"'\nAdd-Content D:\\a\\1\\s\\SharpView\\FodyWeavers.xml '<IncludeAssemblies>'\nAdd-Content D:\\a\\1\\s\\SharpView\\FodyWeavers.xml 'CommandLine'\nAdd-Content D:\\a\\1\\s\\SharpView\\FodyWeavers.xml '</IncludeAssemblies>'\nAdd-Content D:\\a\\1\\s\\SharpView\\FodyWeavers.xml '</Costura>'\nAdd-Content D:\\a\\1\\s\\SharpView\\FodyWeavers.xml '</Weavers>'"
-
-- task: PowerShell@2
-  displayName: PowerShell Script for SharpHound
-  inputs:
-    targetType: inline
-    script: "Set-Content D:\\a\\1\\s\\SharpHound3\\FodyWeavers.xml '<?xml version=\"1.0\" encoding=\"utf-8\" ?>'\nAdd-Content D:\\a\\1\\s\\SharpHound3\\FodyWeavers.xml '<Weavers>'\nAdd-Content D:\\a\\1\\s\\SharpHound3\\FodyWeavers.xml '<Costura>'\nAdd-Content D:\\a\\1\\s\\SharpHound3\\FodyWeavers.xml 'DisableCleanup=\"true\"'\nAdd-Content D:\\a\\1\\s\\SharpHound3\\FodyWeavers.xml '<IncludeAssemblies>'\nAdd-Content D:\\a\\1\\s\\SharpHound3\\FodyWeavers.xml 'CommandLine'\nAdd-Content D:\\a\\1\\s\\SharpHound3\\FodyWeavers.xml '</IncludeAssemblies>'\nAdd-Content D:\\a\\1\\s\\SharpHound3\\FodyWeavers.xml '</Costura>'\nAdd-Content D:\\a\\1\\s\\SharpHound3\\FodyWeavers.xml '</Weavers>'"
-  
 - task: PowerShell@2
   displayName: PowerShell Script for ConfuserEx
   inputs:
