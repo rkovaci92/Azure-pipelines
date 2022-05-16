@@ -77,7 +77,7 @@ resources:
   - repository: SharpView 
     type: github
     endpoint: rkovaci92
-    name: RoxanaKovaci/SharpView
+    name: tevora-threat/SharpView
   - repository: SharpHound 
     type: github
     endpoint: rkovaci92
@@ -152,7 +152,6 @@ steps:
 - checkout: KrbRelayUp
 - checkout: KrbRelay
 - checkout: Snaffler
-- checkout: SharpSQL
 - checkout: SharpWebServer
 - checkout: SharpWMI
 - checkout: SharpMiniDump
@@ -200,6 +199,13 @@ steps:
       foreach ($f in $folders) {$pos = $(python.exe .\words.py); python.exe .\InvisibilityCloak.py -d $f.FullName -n $pos -m rot13; echo "$f is now $pos" >> .\correlation.txt}
 
       gc .\correlation.txt
+
+- task: PowerShell@2
+  displayName: PowerShell Script for SharpView
+  inputs:
+    targetType: inline
+    script: "Set-Content D:\\a\\1\\s\\SharpView\\FodyWeavers.xml '<?xml version=\"1.0\" encoding=\"utf-8\" ?>'\nAdd-Content D:\\a\\1\\s\\SharpView\\FodyWeavers.xml '<Weavers>'\nAdd-Content D:\\a\\1\\s\\SharpView\\FodyWeavers.xml '<Costura>'\nAdd-Content D:\\a\\1\\s\\SharpView\\FodyWeavers.xml 'DisableCleanup=\"true\"'\nAdd-Content D:\\a\\1\\s\\SharpView\\FodyWeavers.xml '<IncludeAssemblies>'\nAdd-Content D:\\a\\1\\s\\SharpView\\FodyWeavers.xml 'CommandLine'\nAdd-Content D:\\a\\1\\s\\SharpView\\FodyWeavers.xml '</IncludeAssemblies>'\nAdd-Content D:\\a\\1\\s\\SharpView\\FodyWeavers.xml '</Costura>'\nAdd-Content D:\\a\\1\\s\\SharpView\\FodyWeavers.xml '</Weavers>'"
+
 - task: VSBuild@1
   displayName: Build solution **\*.sln
   inputs:
