@@ -10,3 +10,5 @@ The build pipeline does the following:
 4. keeps a record of all binaries names and their corresponding renames (in correlation.txt)
 5. compiles and builds all the binaries
 6. runs the compiled versions of each binary through ConfuserEx from https://github.com/mkaring/ConfuserEx
+
+There is one caveat with InvisibilityCloak, it doesn't support repos with multiple projects in them so repos such as Farmer or InternalMonologue, etc have not been run through it but they're still obfuscated with ConfuserEx.
