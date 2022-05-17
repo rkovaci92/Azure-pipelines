@@ -343,7 +343,6 @@ steps:
 
       $road = "D:\a\1\a\ROADtoken\bin\Release\*.exe"
       $roadf = (ls $roadf).Name
-      $roady = ($roadf -split ".exe")[0]
 
       $outl = "D:\a\1\a\SearchOutlook\*\bin\Release\*.exe"
       $outlf = (ls $outl).Name
@@ -389,9 +388,9 @@ steps:
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\noPac\$nopacy\bin\Release\$nopacf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\netsh_acl_enumerator\$nenuy\bin\Release\$nenuf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\MalSCCM\$sccmy\bin\Release\$sccmf' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\ROADtoken\bin\Release\$roadf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SearchOutlook\$outy\bin\Release\$outf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpChisel\$chiy\bin\Release\$chif' />"
+      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\ROADtoken\bin\Release\$roadf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\RequestAADRefreshToken\RequestAADRefreshToken\bin\Release\RequestAADRefreshToken.exe' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Internal-Monologue\InternalMonologueExe\bin\Release\InternalMonologueExe.exe' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Farmer\Farmer\bin\Release\Farmer.exe' />"
