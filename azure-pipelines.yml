@@ -298,11 +298,23 @@ steps:
 
       # create confuser crpoj file
       New-Item D:\a\1\a\conf.crproj
-      Set-Content D:\a\1\a\conf.crproj '<?xml version="1.0" encoding="utf-8"?>'
-      Add-Content D:\a\1\a\conf.crproj '<project outputDir="D:\a\1\a\Confused\" baseDir="D:\a\1\a\" xmlns="http://confuser.codeplex.com">'
-      Add-Content D:\a\1\a\conf.crproj '<rule preset="maximum" pattern="true">'
-      Add-Content D:\a\1\a\conf.crproj '<protection id="watermark" action="remove" />'
-      Add-Content D:\a\1\a\conf.crproj '</rule>'
+      Set-Content D:\a\1\a\conf.crproj "<?xml version='1.0' encoding='utf-8'?>"
+      Add-Content D:\a\1\a\conf.crproj "<project outputDir='D:\a\1\a\Confused\ baseDir='D:\a\1\a\' xmlns='http://confuser.codeplex.com'>"
+      Add-Content D:\a\1\a\conf.crproj "<rule preset='maximum' pattern='true'>"
+      Add-Content D:\a\1\a\conf.crproj "<protection id='anti debug' />"
+	    Add-Content D:\a\1\a\conf.crproj "<protection id='anti dump' />"
+	    Add-Content D:\a\1\a\conf.crproj "<protection id='anti ildasm' />"
+	    Add-Content D:\a\1\a\conf.crproj "<protection id='anti tamper' />"
+	    Add-Content D:\a\1\a\conf.crproj "<protection id='constants' />"
+	    Add-Content D:\a\1\a\conf.crproj "<protection id='ctrl flow' />"
+	    Add-Content D:\a\1\a\conf.crproj "<protection id='harden' />"
+	    Add-Content D:\a\1\a\conf.crproj "<protection id='invalid metadata' />"
+	    Add-Content D:\a\1\a\conf.crproj "<protection id='ref proxy' />"
+	    Add-Content D:\a\1\a\conf.crproj "<protection id='rename' />"
+	    Add-Content D:\a\1\a\conf.crproj "<protection id='resources' />"
+	    Add-Content D:\a\1\a\conf.crproj "<protection id='typescramble' />"
+      Add-Content D:\a\1\a\conf.crproj "<protection id='watermark' action='remove' />"
+      Add-Content D:\a\1\a\conf.crproj "</rule>"
       Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $st)' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $sv)' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $sh)' />"
@@ -330,15 +342,15 @@ steps:
       Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $road)' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $outl)' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $chi)' />" 
-      Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\KrbRelay\KrbRelay\bin\Release\KrbRelay.exe" />'
-      Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\KrbRelay\CheckPort\bin\Release\CheckPort.exe" />'
-      Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\SharpSystemTriggers\Midl2Bytes\bin\Release\Midl2Bytes.exe" />'
-      Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\SharpSystemTriggers\SharpDcomTrigger\bin\Release\SharpDcomTrigger.exe" />'
-      Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\SharpSystemTriggers\SharpEfsTrigger\bin\Release\SharpEfsTrigger.exe" />'
-      Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\SharpSystemTriggers\SharpSpoolTrigger\bin\Release\SharpSpoolTrigger.exe" />'
-      Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\LiquidSnake\CSharpNamedPipeLoader\CSharpNamedPipeLoader\bin\Release\CSharpNamedPipeLoader.exe" />'
-      Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\LiquidSnake\LiquidSnake\LiquidSnake\bin\Release\LiquidSnake.exe" />'
-      Add-Content D:\a\1\a\conf.crproj '</project>'
+      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\KrbRelay\KrbRelay\bin\Release\KrbRelay.exe' />"
+      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\KrbRelay\CheckPort\bin\Release\CheckPort.exe' />"
+      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpSystemTriggers\Midl2Bytes\bin\Release\Midl2Bytes.exe' />"
+      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpSystemTriggers\SharpDcomTrigger\bin\Release\SharpDcomTrigger.exe' />"
+      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpSystemTriggers\SharpEfsTrigger\bin\Release\SharpEfsTrigger.exe' />"
+      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpSystemTriggers\SharpSpoolTrigger\bin\Release\SharpSpoolTrigger.exe' />"
+      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\LiquidSnake\CSharpNamedPipeLoader\CSharpNamedPipeLoader\bin\Release\CSharpNamedPipeLoader.exe' />"
+      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\LiquidSnake\LiquidSnake\LiquidSnake\bin\Release\LiquidSnake.exe' />"
+      Add-Content D:\a\1\a\conf.crproj "</project>"
  
       # execute confuser on everything
       .\ConfuserEx-CLI\Confuser.CLI.exe D:\a\1\a\conf.crproj -n
