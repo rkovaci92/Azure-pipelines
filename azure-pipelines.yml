@@ -295,6 +295,7 @@ steps:
       $road = "D:\a\1\a\ROADtoken\bin\Release\*.exe"
       $outl = "D:\a\1\a\SearchOutlook\*\bin\Release\*.exe"
       $chi = "D:\a\1\a\SharpChisel\*\bin\Release\*.exe"
+      ls $chi
 
       # create confuser crpoj file
       New-Item D:\a\1\a\conf.crproj
