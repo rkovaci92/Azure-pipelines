@@ -295,8 +295,6 @@ steps:
       $road = "D:\a\1\a\ROADtoken\bin\Release\*.exe"
       $outl = "D:\a\1\a\SearchOutlook\*\bin\Release\*.exe"
       $chi = "D:\a\1\a\SharpChisel\*\bin\Release\*.exe"
-      ls $st
-      echo $(ls $st)
 
       # create confuser crpoj file
       New-Item D:\a\1\a\conf.crproj
@@ -317,6 +315,11 @@ steps:
       Add-Content D:\a\1\a\conf.crproj '<protection id="typescramble" />'
       Add-Content D:\a\1\a\conf.crproj '<protection id="watermark" />'
       Add-Content D:\a\1\a\conf.crproj '</rule>'
+      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Farmer\Farmer\bin\Release\Farmer.exe' />"
+      Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $sk)' />"
+      Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $su)' />"
+      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpDPAPI\SharpDPAPI\bin\Release\SharpDPAPI.exe' />"
+      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpDPAPI\SharpChrome\bin\Release\SharpChrome.exe' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\KrbRelay\KrbRelay\bin\Release\KrbRelay.exe' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\KrbRelay\CheckPort\bin\Release\CheckPort.exe' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpSystemTriggers\Midl2Bytes\bin\Release\Midl2Bytes.exe' />"
