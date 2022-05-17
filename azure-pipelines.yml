@@ -385,7 +385,7 @@ steps:
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Seatbelt\$sby\bin\Release\$sbf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SafetyKatz\$sky\bin\Release\$skf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpUp\$suy\bin\Release\$suf' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Certify\$cry\bin\Release\$crf' />"
+      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Certify\$cfy\bin\Release\$cff' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\KrbRelayUp\$kry\bin\Release\$krf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Snaffler\$sfy\bin\Release\$sff' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpWebServer\$swy\bin\Release\$swf' />"
