@@ -49,7 +49,7 @@ resources:
   - repository: SharpSQL 
     type: github
     endpoint: rkovaci92
-    name: mlcsec/SharpSQL
+    name: tevora-threat/SharpSQL
   - repository: SharpWebServer
     type: github
     endpoint: rkovaci92
