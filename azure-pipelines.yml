@@ -351,11 +351,10 @@ steps:
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\LiquidSnake\CSharpNamedPipeLoader\CSharpNamedPipeLoader\bin\Release\CSharpNamedPipeLoader.exe' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\LiquidSnake\LiquidSnake\LiquidSnake\bin\Release\LiquidSnake.exe' />"
       Add-Content D:\a\1\a\conf.crproj "</project>"
- 
+      
       # execute confuser on everything
       .\ConfuserEx-CLI\Confuser.CLI.exe D:\a\1\a\conf.crproj -n
       cp D:\a\1\s\correlation.txt D:\a\1\a\Confused\correlation.txt
-
 - task: PowerShell@2
   displayName: PowerShell Script for Confused EXEs
   inputs:
