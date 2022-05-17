@@ -273,7 +273,7 @@ steps:
       cp D:\a\1\s\SharpView\packages\PCRE.NET.0.7.0\lib\net45\PCRE.NET.dll D:\a\1\a\SharpView\$svy\bin\Release\PCRE.NET.dll
 
       # renamed binaries
-      $sh = "D:\a\1\a\SharpHound\bin\Release\*.exe"
+      $sh = "D:\a\1\a\SharpHound\bin\Release\net462\*.exe"
       $shf = (ls $sh).Name
       $shy = ($shf -split ".exe")[0]
 
@@ -380,7 +380,7 @@ steps:
       Add-Content D:\a\1\a\conf.crproj '<protection id="typescramble" />'
       Add-Content D:\a\1\a\conf.crproj '<protection id="watermark" />'
       Add-Content D:\a\1\a\conf.crproj '</rule>'
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpHound\bin\Release\$shy.exe' />"
+      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpHound\bin\Release\net462\$shy.exe' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Rubeus\$rby\bin\Release\$rbf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Seatbelt\$sby\bin\Release\$sbf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SafetyKatz\$sky\bin\Release\$skf' />"
