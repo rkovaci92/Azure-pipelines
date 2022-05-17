@@ -46,10 +46,6 @@ resources:
     type: github
     endpoint: rkovaci92
     name: SnaffCon/Snaffler
-  - repository: SharpSQL 
-    type: github
-    endpoint: rkovaci92
-    name: tevora-threat/SharpSQL
   - repository: SharpWebServer
     type: github
     endpoint: rkovaci92
@@ -118,6 +114,10 @@ resources:
     type: github
     endpoint: rkovaci92
     name: dirkjanm/ROADtoken
+  - repository: RequestAADRefreshToken
+    type: github
+    endpoint: rkovaci92
+    name: RoxanaKovaci/RequestAADRefreshToken
   - repository: LiquidSnake
     type: github
     endpoint: rkovaci92
@@ -164,10 +164,10 @@ steps:
 - checkout: SharpLAPS
 - checkout: SharpSystemTriggers
 - checkout: ROADtoken
+- checkout: RequestAADRefreshToken
 - checkout: LiquidSnake
 - checkout: SearchOutlook
 - checkout: SharpChisel
-- checkout: SharpSQL
 
 - task: NuGetToolInstaller@0
   displayName: Use NuGet 4.4.1
@@ -286,7 +286,6 @@ steps:
       $cf = "D:\a\1\a\Certify\*\bin\Release\*.exe"
       $kru = "D:\a\1\a\KrbRelayUp\*\bin\Release\*.exe"
       $sf = "D:\a\1\a\Snaffler\*\bin\Release\*.exe"
-      $sql = "D:\a\1\a\SharpSQL\*\bin\Release\net4.0\*.exe"
       $sw = "D:\a\1\a\SharpWebServer\*\bin\Release\*.exe"
       $smd = "D:\a\1\a\SharpMiniDump\*\bin\Release\*.exe"
       $swmi = "D:\a\1\a\SharpWMI\*\bin\Release\*.exe"
@@ -299,6 +298,7 @@ steps:
       $sccm = "D:\a\1\a\MalSCCM\*\bin\Release\*.exe"
       $g3r = "D:\a\1\a\Group3r\*\bin\Release\*.exe"
       $road = "D:\a\1\a\ROADtoken\bin\Release\*.exe"
+      $aad = "D:\a\1\a\RequestAADRefreshToken\*\bin\Release\*.exe"
       $outl = "D:\a\1\a\SearchOutlook\*\bin\Release\*.exe"
       $chi = "D:\a\1\a\SharpChisel\*\bin\Release\*.exe"
 
@@ -322,7 +322,6 @@ steps:
       Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $cf)' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $kru)' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $sf)' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpSQL\SharpSQL\bin\Release\net4.0\SharpSQL.exe' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $sw)' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $smd)' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $swmi)' />"
@@ -335,6 +334,7 @@ steps:
       Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $sccm)' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $g3r)' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $road)' />"
+      Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $aad)' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $outl)' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $chi)' />" 
       Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\KrbRelay\KrbRelay\bin\Release\KrbRelay.exe" />'
