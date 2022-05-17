@@ -299,7 +299,7 @@ steps:
       # create confuser crpoj file
       New-Item D:\a\1\a\conf.crproj
       Set-Content D:\a\1\a\conf.crproj "<?xml version='1.0' encoding='utf-8'?>"
-      Add-Content D:\a\1\a\conf.crproj "<project outputDir=\"D:\a\1\a\Confused\\" baseDir=\"D:\a\1\a\\" xmlns=\"http://confuser.codeplex.com\">"
+      Add-Content D:\a\1\a\conf.crproj "<project outputDir='D:\a\1\a\Confused' baseDir='D:\a\1\a' xmlns='http://confuser.codeplex.com'>"
       Add-Content D:\a\1\a\conf.crproj "<rule preset='maximum' pattern='true'>"
       Add-Content D:\a\1\a\conf.crproj "<protection id='anti debug' />"
       Add-Content D:\a\1\a\conf.crproj "<protection id='anti dump' />"
