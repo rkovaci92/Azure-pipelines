@@ -61,7 +61,7 @@ resources:
   - repository: Internal-Monologue 
     type: github
     endpoint: rkovaci92
-    name: RoxanaKovaci/Internal-Monologue
+    name: eladshamir/Internal-Monologue
   - repository: Whisker 
     type: github
     endpoint: rkovaci92
@@ -317,10 +317,6 @@ steps:
       $wmif = (ls $wmi).Name
       $wmiy = ($wmif -split ".exe")[0]
 
-      $im = "D:\a\1\a\Internal-Monologue\*\bin\Release\*.exe"
-      $imf = (ls $imu).Name
-      $imy = ($imf -split ".exe")[0]
-
       $wk = "D:\a\1\a\Whisker\*\bin\Release\*.exe"
       $wkf = (ls $wk).Name
       $wky = ($wkf -split ".exe")[0]
@@ -391,7 +387,6 @@ steps:
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpWebServer\$swy\bin\Release\$swf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpMiniDump\$smdy\bin\Release\$smdf' />"  
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpWMI\$wmiy\bin\Release\$wmif' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Internal-Monologue\$imy\bin\Release\$imf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Whisker\$wky\bin\Release\$wkf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpWSUS\$wsusy\bin\Release\$wsusf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpLAPS\$lapsy\bin\Release\$lapsf' />" 
@@ -402,6 +397,7 @@ steps:
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\ROADtoken\$roady\bin\Release\$roadf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SearchOutlook\$outy\bin\Release\$outf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpChisel\$chiy\bin\Release\$chif' />"
+      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Internal-Monologue\InternalMonologueExe\bin\Release\InternalMonologueExe.exe' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Farmer\Farmer\bin\Release\Farmer.exe' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpDPAPI\SharpDPAPI\bin\Release\SharpDPAPI.exe' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpDPAPI\SharpChrome\bin\Release\SharpChrome.exe' />"
