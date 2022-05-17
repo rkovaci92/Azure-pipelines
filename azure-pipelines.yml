@@ -385,7 +385,7 @@ steps:
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\MalSCCM\$sccmy\bin\Release\$sccmf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SearchOutlook\$outly\bin\Release\$outlf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\ROADtoken\bin\Release\$roadf' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Internal-Monologue\InternalMonologueExe\bin\Release\InternalMonologueExe.exe' />"
+      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Internal-Monologue\InternalMonologueExe\bin\Release\InternalMonologue.exe' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Farmer\Farmer\bin\Release\Farmer.exe' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpDPAPI\SharpDPAPI\bin\Release\SharpDPAPI.exe' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpDPAPI\SharpChrome\bin\Release\SharpChrome.exe' />"
