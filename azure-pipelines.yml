@@ -114,10 +114,6 @@ resources:
     type: github
     endpoint: rkovaci92
     name: dirkjanm/ROADtoken
-  - repository: RequestAADRefreshToken
-    type: github
-    endpoint: rkovaci92
-    name: RoxanaKovaci/RequestAADRefreshToken
   - repository: LiquidSnake
     type: github
     endpoint: rkovaci92
@@ -164,7 +160,6 @@ steps:
 - checkout: SharpLAPS
 - checkout: SharpSystemTriggers
 - checkout: ROADtoken
-- checkout: RequestAADRefreshToken
 - checkout: LiquidSnake
 - checkout: SearchOutlook
 - checkout: SharpChisel
@@ -298,7 +293,6 @@ steps:
       $sccm = "D:\a\1\a\MalSCCM\*\bin\Release\*.exe"
       $g3r = "D:\a\1\a\Group3r\*\bin\Release\*.exe"
       $road = "D:\a\1\a\ROADtoken\bin\Release\*.exe"
-      $aad = "D:\a\1\a\RequestAADRefreshToken\*\bin\Release\*.exe"
       $outl = "D:\a\1\a\SearchOutlook\*\bin\Release\*.exe"
       $chi = "D:\a\1\a\SharpChisel\*\bin\Release\*.exe"
 
@@ -334,7 +328,6 @@ steps:
       Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $sccm)' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $g3r)' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $road)' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $aad)' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $outl)' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $chi)' />" 
       Add-Content D:\a\1\a\conf.crproj '<module path="D:\a\1\a\KrbRelay\KrbRelay\bin\Release\KrbRelay.exe" />'
