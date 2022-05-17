@@ -176,7 +176,7 @@ steps:
 - task: UsePythonVersion@0
   displayName: 'Use Python 3.x'
 - task: PowerShell@2
-  displayName: PowerShell Script for ConfuserEx
+  displayName: PowerShell Script for InvisibilityCloak
   inputs:
     targetType: inline
     script: |
