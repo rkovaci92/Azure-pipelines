@@ -315,6 +315,11 @@ steps:
       Add-Content D:\a\1\a\conf.crproj '<protection id="typescramble" />'
       Add-Content D:\a\1\a\conf.crproj '<protection id="watermark" />'
       Add-Content D:\a\1\a\conf.crproj '</rule>'
+      Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $st)' />"
+      Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $sv)' />"
+      Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $sh)' />"
+      Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $rb)' />"
+      Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $sb)' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $cf)' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $kru)' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $sf)' />"
