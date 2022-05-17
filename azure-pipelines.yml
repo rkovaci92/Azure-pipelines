@@ -283,7 +283,7 @@ steps:
       $sf = "D:\a\1\a\Snaffler\*\bin\Release\*.exe"
       $sw = "D:\a\1\a\SharpWebServer\*\bin\Release\*.exe"
       $smd = "D:\a\1\a\SharpMiniDump\*\bin\Release\*.exe"
-      $swmi = "D:\a\1\a\SharpWMI\*\bin\Release\*.exe"
+      $wmi = "D:\a\1\a\SharpWMI\*\bin\Release\*.exe"
       $im = "D:\a\1\a\Internal-Monologue\*\bin\Release\*.exe"
       $wk = "D:\a\1\a\Whisker\*\bin\Release\*.exe"
       $wsus = "D:\a\1\a\SharpWSUS\*\bin\Release\*.exe"
@@ -315,6 +315,12 @@ steps:
       Add-Content D:\a\1\a\conf.crproj '<protection id="typescramble" />'
       Add-Content D:\a\1\a\conf.crproj '<protection id="watermark" />'
       Add-Content D:\a\1\a\conf.crproj '</rule>'
+      Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $cf)' />"
+      Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $kru)' />"
+      Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $sf)' />"
+      Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $sw)' />"
+      Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $smd)' />"
+      Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $wmi)' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Farmer\Farmer\bin\Release\Farmer.exe' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $sk)' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='$(ls $su)' />"
