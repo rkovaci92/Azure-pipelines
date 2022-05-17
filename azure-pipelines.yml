@@ -389,7 +389,6 @@ steps:
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\netsh_acl_enumerator\$nenuy\bin\Release\$nenuf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\MalSCCM\$sccmy\bin\Release\$sccmf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SearchOutlook\$outly\bin\Release\$outlf' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpChisel\$chiy\bin\Release\$chif' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\ROADtoken\bin\Release\$roadf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\RequestAADRefreshToken\RequestAADRefreshToken\bin\Release\RequestAADRefreshToken.exe' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Internal-Monologue\InternalMonologueExe\bin\Release\InternalMonologueExe.exe' />"
