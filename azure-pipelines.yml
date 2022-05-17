@@ -172,6 +172,7 @@ steps:
 - checkout: LiquidSnake
 - checkout: SearchOutlook
 - checkout: SharpChisel
+- checkout: SharpSQL
 
 - task: NuGetToolInstaller@0
   displayName: Use NuGet 4.4.1
