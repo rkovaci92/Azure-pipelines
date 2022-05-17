@@ -1,7 +1,7 @@
 import requests
 import random
 
-word_site = "https://www.mit.edu/~ecprice/wordlist.10000"
+word_site = "https://raw.githubusercontent.com/huntergregal/wordlists/master/names.txt"
 
 response = requests.get(word_site)
 WORDS = response.content.splitlines()
