@@ -355,8 +355,7 @@ steps:
       # execute confuser on everything
       .\ConfuserEx-CLI\Confuser.CLI.exe D:\a\1\a\conf.crproj -n
       cp D:\a\1\s\correlation.txt D:\a\1\a\Confused\correlation.txt
-      
-      - task: PowerShell@2
+- task: PowerShell@2
   displayName: PowerShell Script for Confused EXEs
   inputs:
     targetType: inline
