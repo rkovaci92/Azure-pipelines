@@ -1,7 +1,7 @@
 import requests
 import random
 
-word_site = "https://raw.githubusercontent.com/huntergregal/wordlists/master/names.txt"
+word_site = "https://raw.githubusercontent.com/RoxanaKovaci/Azure-pipelines/master/names.txt"
 
 response = requests.get(word_site)
 WORDS = response.content.splitlines()
