@@ -229,7 +229,7 @@ steps:
       Add-Content D:\\a\\1\\s\\SharpHound\\FodyWeavers.xml '</IncludeAssemblies>'
       Add-Content D:\\a\\1\\s\\SharpHound\\FodyWeavers.xml '</Costura>'
       Add-Content D:\\a\\1\\s\\SharpHound\\FodyWeavers.xml '</Weavers>'
-	  
+
 - task: VSBuild@1
   displayName: Build solution **\*.sln
   inputs:
