@@ -118,10 +118,10 @@ resources:
     type: github
     endpoint: rkovaci92
     name: RedLectroid/SearchOutlook
-  - repository: SharpChisel
+  - repository: SharPersist
     type: github
     endpoint: rkovaci92
-    name: shantanu561993/SharpChisel
+    name: mandiant/SharPersist
 
 trigger:
 - main
@@ -157,7 +157,7 @@ steps:
 - checkout: ROADtoken
 - checkout: LiquidSnake
 - checkout: SearchOutlook
-- checkout: SharpChisel
+- checkout: SharPersist
 
 - task: NuGetToolInstaller@0
   displayName: Use NuGet 4.4.1
@@ -182,7 +182,7 @@ steps:
       pip3 install random
 
       $folders = Get-ChildItem -Path ".\" -directory
-      foreach ($f in $folders) {$pos = $(python.exe .\words.py); python.exe .\InvisibilityCloak.py -d $f.FullName -n $pos -m rot13; echo "$f is now $pos" >> .\correlation.txt}
+      foreach ($f in $folders) {$pos = $(python.exe .\words.py); python.exe .\InvisibilityCloak.py -d $f.FullName -n $pos -m reverse; echo "$f is now $pos" >> .\correlation.txt}
 
       gc .\correlation.txt
 
@@ -343,9 +343,9 @@ steps:
       $outlf = (ls $outl).Name
       $outly = ($outlf -split ".exe")[0]
 
-      $chi = "D:\a\1\a\SharpChisel\*\bin\Release\*.exe"
-      $chif = (ls $chi).Name
-      $chiy = ($chif -split ".exe")[0]
+      $per = "D:\a\1\a\SharPersist\*\bin\Release\*.exe"
+      $perf = (ls $per).Name
+      $pery = ($perf -split ".exe")[0]
 
       # create confuser crpoj file
       New-Item D:\a\1\a\conf.crproj
@@ -385,6 +385,7 @@ steps:
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\MalSCCM\$sccmy\bin\Release\$sccmf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SearchOutlook\$outly\bin\Release\$outlf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\ROADtoken\bin\Release\$roadf' />"
+      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharPersist\$pery\bin\Release\$perf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Internal-Monologue\InternalMonologueExe\bin\Release\InternalMonologue.exe' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Farmer\Farmer\bin\Release\Farmer.exe' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpDPAPI\SharpDPAPI\bin\Release\SharpDPAPI.exe' />"
