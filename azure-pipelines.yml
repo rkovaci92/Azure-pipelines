@@ -229,8 +229,7 @@ steps:
       Add-Content D:\a\1\s\SharPersist\FodyWeavers.xml '</IncludeAssemblies>'
       Add-Content D:\a\1\s\SharPersist\FodyWeavers.xml '</Costura>'
       Add-Content D:\a\1\s\SharPersist\FodyWeavers.xml '</Weavers>'
-      
-      ls D:\a\1\s\SharPersist\packages\TaskScheduler.2.10.1\lib\
+
 - task: VSBuild@1
   displayName: Build solution **\*.sln
   inputs:
@@ -361,7 +360,7 @@ steps:
       $per = "D:\a\1\a\SharPersist\*\bin\Release\*.exe"
       $perf = (ls $per).Name
       $pery = ($perf -split ".exe")[0]
-      
+      cp D:\a\1\s\SharPersist\packages\TaskScheduler.2.10.1\lib\net40\Microsoft.Win32.TaskScheduler.dll D:\a\1\a\SharPersist\$pery\bin\Release\Microsoft.Win32.TaskScheduler.dll
 
       # create confuser crpoj file
       New-Item D:\a\1\a\conf.crproj
