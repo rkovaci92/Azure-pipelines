@@ -230,7 +230,7 @@ steps:
       Add-Content D:\a\1\s\SharPersist\FodyWeavers.xml '</Costura>'
       Add-Content D:\a\1\s\SharPersist\FodyWeavers.xml '</Weavers>'
       
-      gc D:\a\1\s\SharPersist\FodyWeavers.xml
+      ls D:\a\1\s\SharPersist\packages\TaskScheduler.2.10.1\lib\
 - task: VSBuild@1
   displayName: Build solution **\*.sln
   inputs:
