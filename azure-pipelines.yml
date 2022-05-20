@@ -191,31 +191,46 @@ steps:
   inputs:
     targetType: inline
     script: |
-      Set-Content D:\\a\\1\\s\\SharpView\\FodyWeavers.xml '<?xml version="1.0" encoding="utf-8" ?>'
-      Add-Content D:\\a\\1\\s\\SharpView\\FodyWeavers.xml '<Weavers>'
-      Add-Content D:\\a\\1\\s\\SharpView\\FodyWeavers.xml '<Costura>'
-      Add-Content D:\\a\\1\\s\\SharpView\\FodyWeavers.xml 'DisableCleanup="true"'
-      Add-Content D:\\a\\1\\s\\SharpView\\FodyWeavers.xml '<IncludeAssemblies>'
-      Add-Content D:\\a\\1\\s\\SharpView\\FodyWeavers.xml 'CommandLine'
-      Add-Content D:\\a\\1\\s\\SharpView\\FodyWeavers.xml '</IncludeAssemblies>'
-      Add-Content D:\\a\\1\\s\\SharpView\\FodyWeavers.xml '</Costura>'
-      Add-Content D:\\a\\1\\s\\SharpView\\FodyWeavers.xml '</Weavers>'
-
+      Set-Content D:\a\1\s\SharpView\FodyWeavers.xml '<?xml version="1.0" encoding="utf-8" ?>'
+      Add-Content D:\a\1\s\SharpView\FodyWeavers.xml '<Weavers>'
+      Add-Content D:\a\1\s\SharpView\FodyWeavers.xml '<Costura>'
+      Add-Content D:\a\1\s\SharpView\FodyWeavers.xml 'DisableCleanup="true"'
+      Add-Content D:\a\1\s\SharpView\FodyWeavers.xml '<IncludeAssemblies>'
+      Add-Content D:\a\1\s\SharpView\FodyWeavers.xml 'CommandLine'
+      Add-Content D:\a\1\s\SharpView\FodyWeavers.xml '</IncludeAssemblies>'
+      Add-Content D:\a\1\s\SharpView\FodyWeavers.xml '</Costura>'
+      Add-Content D:\a\1\s\SharpView\FodyWeavers.xml '</Weavers>'
 - task: PowerShell@2
   displayName: PowerShell Script for SharpHound
   inputs:
     targetType: inline
     script: |
-      Set-Content D:\\a\\1\\s\\SharpHound\\FodyWeavers.xml '<?xml version="1.0" encoding="utf-8" ?>'
-      Add-Content D:\\a\\1\\s\\SharpHound\\FodyWeavers.xml '<Weavers>'
-      Add-Content D:\\a\\1\\s\\SharpHound\\FodyWeavers.xml '<Costura>'
-      Add-Content D:\\a\\1\\s\\SharpHound\\FodyWeavers.xml 'DisableCleanup="true"'
-      Add-Content D:\\a\\1\\s\\SharpHound\\FodyWeavers.xml '<IncludeAssemblies>'
-      Add-Content D:\\a\\1\\s\\SharpHound\\FodyWeavers.xml 'CommandLine'
-      Add-Content D:\\a\\1\\s\\SharpHound\\FodyWeavers.xml '</IncludeAssemblies>'
-      Add-Content D:\\a\\1\\s\\SharpHound\\FodyWeavers.xml '</Costura>'
-      Add-Content D:\\a\\1\\s\\SharpHound\\FodyWeavers.xml '</Weavers>'
+      Set-Content D:\a\1\s\SharpHound\FodyWeavers.xml '<?xml version="1.0" encoding="utf-8" ?>'
+      Add-Content D:\a\1\s\SharpHound\FodyWeavers.xml '<Weavers>'
+      Add-Content D:\a\1\s\SharpHound\FodyWeavers.xml '<Costura>'
+      Add-Content D:\a\1\s\SharpHound\FodyWeavers.xml 'DisableCleanup="true"'
+      Add-Content D:\a\1\s\SharpHound\FodyWeavers.xml '<IncludeAssemblies>'
+      Add-Content D:\a\1\s\SharpHound\FodyWeavers.xml 'CommandLine'
+      Add-Content D:\a\1\s\SharpHound\FodyWeavers.xml '</IncludeAssemblies>'
+      Add-Content D:\a\1\s\SharpHound\FodyWeavers.xml '</Costura>'
+      Add-Content D:\a\1\s\SharpHound\FodyWeavers.xml '</Weavers>'
 
+- task: PowerShell@2
+  displayName: PowerShell Script for SharPersist
+  inputs:
+    targetType: inline
+    script: |
+      Set-Content D:\a\1\s\SharPersist\FodyWeavers.xml '<?xml version="1.0" encoding="utf-8" ?>'
+      Add-Content D:\a\1\s\SharPersist\FodyWeavers.xml '<Weavers>'
+      Add-Content D:\a\1\s\SharPersist\FodyWeavers.xml '<Costura>'
+      Add-Content D:\a\1\s\SharPersist\FodyWeavers.xml 'DisableCleanup="true"'
+      Add-Content D:\a\1\s\SharPersist\FodyWeavers.xml '<IncludeAssemblies>'
+      Add-Content D:\a\1\s\SharPersist\FodyWeavers.xml 'CommandLine'
+      Add-Content D:\a\1\s\SharPersist\FodyWeavers.xml '</IncludeAssemblies>'
+      Add-Content D:\a\1\s\SharPersist\FodyWeavers.xml '</Costura>'
+      Add-Content D:\a\1\s\SharPersist\FodyWeavers.xml '</Weavers>'
+      ls D:\a\1\s\SharPersist\packages\
+      gc D:\a\1\s\SharPersist\FodyWeavers.xml
 - task: VSBuild@1
   displayName: Build solution **\*.sln
   inputs:
@@ -346,6 +361,7 @@ steps:
       $per = "D:\a\1\a\SharPersist\*\bin\Release\*.exe"
       $perf = (ls $per).Name
       $pery = ($perf -split ".exe")[0]
+      
 
       # create confuser crpoj file
       New-Item D:\a\1\a\conf.crproj
