@@ -121,7 +121,7 @@ resources:
   - repository: SharPersist
     type: github
     endpoint: rkovaci92
-    name: mandiant/SharPersist
+    name: RoxanaKovaci/SharPersist
 
 trigger:
 - main
@@ -159,7 +159,7 @@ steps:
 - checkout: SearchOutlook
 - checkout: SharPersist
 
-- task: NuGetToolInstaller@0
+- task: NuGetToolInstaller@1
   displayName: Use NuGet 4.4.1
   inputs:
     versionSpec: 4.4.1
@@ -229,7 +229,7 @@ steps:
       Add-Content D:\a\1\s\SharPersist\FodyWeavers.xml '</IncludeAssemblies>'
       Add-Content D:\a\1\s\SharPersist\FodyWeavers.xml '</Costura>'
       Add-Content D:\a\1\s\SharPersist\FodyWeavers.xml '</Weavers>'
-      ls D:\a\1\s\SharPersist\packages\
+      
       gc D:\a\1\s\SharPersist\FodyWeavers.xml
 - task: VSBuild@1
   displayName: Build solution **\*.sln
