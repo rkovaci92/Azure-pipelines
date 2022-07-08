@@ -119,9 +119,6 @@ resources:
     endpoint: rkovaci92
     name: RedLectroid/SearchOutlook
 
-trigger:
-- main
-
 pool:
   vmImage: 'windows-2019'
 
