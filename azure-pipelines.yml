@@ -412,5 +412,5 @@ schedules:
   displayName: Daily night build
   branches:
     include:
-    - master
+    - main
   always: true
