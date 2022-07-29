@@ -248,7 +248,7 @@ steps:
       Expand-Archive .\ConfuserEx-CLI.zip
 
       # copy dependencies
-      $st = "D:\a\1\a\StandIn\StandIn\*\bin\Release\*.exe"
+      $st = "D:\a\1\a\StandIn\*\bin\Release\*.exe"
       $stf = (ls $st).Name
       $sty = ($stf -split ".exe")[0]
       cp D:\a\1\s\StandIn\packages\CommandLineParser.1.9.3.15\lib\CommandLine.dll D:\a\1\a\StandIn\$sty\bin\Release\CommandLine.dll
