@@ -14,5 +14,6 @@ The build pipeline does the following:
 There is one caveat with InvisibilityCloak, it doesn't support repos with multiple projects in them so repos such as Farmer or InternalMonologue, etc have not been run through it but they're still obfuscated with ConfuserEx.
 
 ## Credits
-https://github.com/mkaring for the awesome ConfuserEx project
-https://github.com/h4wkst3r for another awesome project - InvisibilityCloak
+[mkaring](https://github.com/mkaring) for the awesome ConfuserEx project.
+
+[h4wkst3r](https://github.com/h4wkst3r) for another awesome project - InvisibilityCloak
