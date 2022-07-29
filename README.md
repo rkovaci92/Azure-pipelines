@@ -1,6 +1,6 @@
 # Azure DevOps pipelines for .NET binaries obfuscation
 
-A build pipeline is scheduled to run every morning at 2AM UTC + a release pipeline scheduled at 3AM UTC to push the artifacts from the previous pipeline here - https://github.com/roxanakovaci/Azure-pipelines/releases/download/Obfuscated/Obfuscated.zip 
+A build pipeline is scheduled to run every morning at 2AM UTC + a release pipeline scheduled at 3AM UTC to push the artifacts from the previous pipeline here - [Obfuscated](https://github.com/roxanakovaci/Azure-pipelines/releases/download/Obfuscated/Obfuscated.zip)
 
 The build pipeline does the following:
 1. git clones all the individual binaries from devs repos
