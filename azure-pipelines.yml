@@ -69,7 +69,7 @@ resources:
   - repository: StandIn
     type: github
     endpoint: rkovaci92
-    name: RoxanaKovaci/StandIn
+    name: FuzzySecurity/StandIn
   - repository: SharpView 
     type: github
     endpoint: rkovaci92
@@ -248,10 +248,10 @@ steps:
       Expand-Archive .\ConfuserEx-CLI.zip
 
       # copy dependencies
-      $st = "D:\a\1\a\StandIn\*\bin\Release\*.exe"
+      $st = "D:\a\1\a\StandIn\StandIn\*\bin\Release\*.exe"
       $stf = (ls $st).Name
       $sty = ($stf -split ".exe")[0]
-      cp D:\a\1\s\StandIn\packages\CommandLineParser.1.9.3.15\lib\CommandLine.dll D:\a\1\a\StandIn\$sty\bin\Release\CommandLine.dll
+      cp D:\a\1\s\StandIn\StandIn\packages\CommandLineParser.1.9.3.15\lib\CommandLine.dll D:\a\1\a\StandIn\StandIn\$sty\bin\Release\CommandLine.dll
 
       $sv = "D:\a\1\a\SharpView\*\bin\Release\*.exe"
       $svf = (ls $sv).Name
@@ -353,7 +353,7 @@ steps:
       Add-Content D:\a\1\a\conf.crproj '<protection id="typescramble" />'
       Add-Content D:\a\1\a\conf.crproj '<protection id="watermark" action="remove" />'
       Add-Content D:\a\1\a\conf.crproj '</rule>'
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\StandIn\$sty\bin\Release\$stf' />"
+      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\StandIn\StandIn\$sty\bin\Release\$stf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpView\$svy\bin\Release\$svf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpHound\bin\Release\net462\$shy.exe' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Rubeus\$rby\bin\Release\$rbf' />"
