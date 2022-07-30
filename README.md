@@ -12,6 +12,35 @@ The build pipeline does the following:
 
 There is one caveat with InvisibilityCloak, it doesn't support repos with multiple projects in them so repos such as Farmer or InternalMonologue, etc have not been run through it but they're still obfuscated with ConfuserEx. Such repos will keep their original name.
 
+The list of currently included repos in the pipelines:
+- Farmer
+- Rubeus
+- Seatbelt
+- SafetyKatz
+- SharpUp
+- SharpDPAPI
+- Certify
+- KrbRelayUp
+- KrbRelay
+- Snaffler
+- SharpWebServer
+- SharpWMI
+- SharpMiniDump
+- Internal-Monologue
+- Whisker
+- StandIn
+- SharpView
+- SharpHound
+- MalSCCM
+- SharpWSUS
+- netsh_acl_enumerator
+- noPac
+- SharpLAPS
+- SharpSystemTrigger
+- ROADtoken
+- LiquidSnake
+- SearchOutlook
+
 ## Credits
 [mkaring](https://github.com/mkaring) for the awesome ConfuserEx project.
 
