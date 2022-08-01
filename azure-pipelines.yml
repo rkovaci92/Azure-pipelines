@@ -410,8 +410,8 @@ steps:
 
 schedules:
 - cron: "0 2 * * Mon,Tue,Wed,Thur,Fri"
-  displayName: Daily night build
+  displayName: Daily night builds
   branches:
     include:
-    - main
+    - master
   always: true
