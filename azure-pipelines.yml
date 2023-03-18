@@ -351,7 +351,6 @@ steps:
       Add-Content D:\a\1\a\conf.crproj '<protection id="ref proxy" />'
       Add-Content D:\a\1\a\conf.crproj '<protection id="rename" />'
       Add-Content D:\a\1\a\conf.crproj '<protection id="resources" />'
-      Add-Content D:\a\1\a\conf.crproj '<protection id="typescramble" />'
       Add-Content D:\a\1\a\conf.crproj '<protection id="watermark" action="remove" />'
       Add-Content D:\a\1\a\conf.crproj '</rule>'
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\StandIn\$sty\bin\Release\$stf' />"
