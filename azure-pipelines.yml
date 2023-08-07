@@ -39,10 +39,6 @@ resources:
     type: github
     endpoint: rkovaci92
     name: GhostPack/Certify
-  - repository: KrbRelayUp
-    type: github
-    endpoint: rkovaci92
-    name: Dec0ne/KrbRelayUp
   - repository: Snaffler 
     type: github
     endpoint: rkovaci92
@@ -135,7 +131,6 @@ steps:
 - checkout: SharpUp
 - checkout: SharpDPAPI
 - checkout: Certify
-- checkout: KrbRelayUp
 - checkout: KrbRelay
 - checkout: Snaffler
 - checkout: SharpWebServer
@@ -289,10 +284,6 @@ steps:
       $cff = (ls $cf).Name
       $cfy = ($cff -split ".exe")[0]
 
-      $kru = "D:\a\1\a\KrbRelayUp\*\bin\Release\*.exe"
-      $krf = (ls $kru).Name
-      $kry = ($krf -split ".exe")[0]
-
       $sf = "D:\a\1\a\Snaffler\*\bin\Release\*.exe"
       $sff = (ls $sf).Name
       $sfy = ($sff -split ".exe")[0]
@@ -370,7 +361,6 @@ steps:
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SafetyKatz\$sky\bin\Release\$skf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpUp\$suy\bin\Release\$suf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Certify\$cfy\bin\Release\$cff' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\KrbRelayUp\$kry\bin\Release\$krf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Snaffler\$sfy\bin\Release\$sff' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpWebServer\$swy\bin\Release\$swf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpMiniDump\$smdy\bin\Release\$smdf' />"  
@@ -381,7 +371,7 @@ steps:
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\noPac\$nopacy\bin\Release\$nopacf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\netsh_acl_enumerator\$nenuy\bin\Release\$nenuf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\MalSCCM\$sccmy\bin\Release\$sccmf' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\MalSCCM\$ssccmy\bin\Release\$ssccmf' />"
+      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpSCCM\$ssccmy\bin\Release\$ssccmf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SearchOutlook\$outly\bin\Release\$outlf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\ROADtoken\bin\Release\$roadf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Internal-Monologue\InternalMonologueExe\bin\Release\InternalMonologue.exe' />"
