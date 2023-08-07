@@ -39,10 +39,6 @@ resources:
     type: github
     endpoint: rkovaci92
     name: GhostPack/Certify
-  - repository: Snaffler 
-    type: github
-    endpoint: rkovaci92
-    name: SnaffCon/Snaffler
   - repository: SharpWebServer
     type: github
     endpoint: rkovaci92
@@ -132,7 +128,6 @@ steps:
 - checkout: SharpDPAPI
 - checkout: Certify
 - checkout: KrbRelay
-- checkout: Snaffler
 - checkout: SharpWebServer
 - checkout: SharpWMI
 - checkout: SharpMiniDump
@@ -284,10 +279,6 @@ steps:
       $cff = (ls $cf).Name
       $cfy = ($cff -split ".exe")[0]
 
-      $sf = "D:\a\1\a\Snaffler\*\bin\Release\*.exe"
-      $sff = (ls $sf).Name
-      $sfy = ($sff -split ".exe")[0]
-
       $sw = "D:\a\1\a\SharpWebServer\*\bin\Release\*.exe"
       $swf = (ls $sw).Name
       $swy = ($swf -split ".exe")[0]
@@ -361,7 +352,6 @@ steps:
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SafetyKatz\$sky\bin\Release\$skf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpUp\$suy\bin\Release\$suf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Certify\$cfy\bin\Release\$cff' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Snaffler\$sfy\bin\Release\$sff' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpWebServer\$swy\bin\Release\$swf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpMiniDump\$smdy\bin\Release\$smdf' />"  
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpWMI\$wmiy\bin\Release\$wmif' />"
