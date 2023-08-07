@@ -87,6 +87,10 @@ resources:
     type: github
     endpoint: rkovaci92
     name: nettitude/MalSCCM
+  - repository: SharpSCCM
+    type: github
+    endpoint: rkovaci92
+    name: Mayyhem/SharpSCCM
   - repository: SharpWSUS
     type: github
     endpoint: rkovaci92
@@ -143,6 +147,7 @@ steps:
 - checkout: SharpView
 - checkout: SharpHound
 - checkout: MalSCCM
+- checkout: SharpSCCM
 - checkout: SharpWSUS
 - checkout: netsh_acl_enumerator
 - checkout: noPac
@@ -328,6 +333,10 @@ steps:
       $sccmf = (ls $sccm).Name
       $sccmy = ($sccmf -split ".exe")[0]
 
+      $ssccm = "D:\a\1\a\SharpSCCM\*\bin\Release\*.exe"
+      $ssccmf = (ls $ssccm).Name
+      $ssccmy = ($ssccmf -split ".exe")[0]
+      
       $road = "D:\a\1\a\ROADtoken\bin\Release\*.exe"
       $roadf = (ls $road).Name
 
@@ -372,6 +381,7 @@ steps:
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\noPac\$nopacy\bin\Release\$nopacf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\netsh_acl_enumerator\$nenuy\bin\Release\$nenuf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\MalSCCM\$sccmy\bin\Release\$sccmf' />"
+      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\MalSCCM\$ssccmy\bin\Release\$ssccmf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SearchOutlook\$outly\bin\Release\$outlf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\ROADtoken\bin\Release\$roadf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Internal-Monologue\InternalMonologueExe\bin\Release\InternalMonologue.exe' />"
