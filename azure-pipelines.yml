@@ -1,13 +1,12 @@
 # Author: Roxana Kovaci
 # Twitter: @RoxanaKovaci
 
-variables:
-- name: BuildParameters.solution
-  value: '**\*.sln'
-- name: BuildConfiguration
-  value: Release
-- name: BuildPlatform
-  value: 'Any CPU'
+pool:
+  name: Azure Pipelines
+  demands:
+  - msbuild
+  - visualstudio
+  - vstest
 
 resources:
   repositories:
@@ -112,9 +111,6 @@ resources:
     endpoint: rkovaci92
     name: RedLectroid/SearchOutlook
 
-pool:
-  vmImage: 'windows-2019'
-
 steps:
 - checkout: Farmer
 - checkout: Rubeus
@@ -165,7 +161,7 @@ steps:
       pip3 install random
 
       $folders = Get-ChildItem -Path ".\" -directory
-      foreach ($f in $folders) {$pos = $(python.exe .\words.py); python.exe .\InvisibilityCloak.py -d $f.FullName -n $pos -m reverse; echo "$f is now $pos" >> .\correlation.txt}
+      foreach ($f in $folders) {$pos = $(python3.exe .\words.py); python3.exe .\InvisibilityCloak.py -d $f.FullName -n $pos -m reverse; echo "$f is now $pos" >> .\correlation.txt}
 
       gc .\correlation.txt
 
@@ -233,19 +229,9 @@ steps:
       # make the confused folder
       mkdir D:\a\1\a\Confused\
 
-      #   Install 7zip module
-      [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-      Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
-      Set-PSRepository -Name 'PSGallery' -SourceLocation "https://www.powershellgallery.com/api/v2" -InstallationPolicy Trusted
-      Install-Module -Name 7Zip4PowerShell -Force
-
-      #   Extract 7zip file
-      wget https://github.com/XenocodeRCE/neo-ConfuserEx/releases/download/v1.0.0/bin.7z -o bin.7z
-      Expand-7Zip -ArchiveFileName .\bin.7z -TargetPath .\
-
       # download specific ConfuserEx version
-      #wget https://github.com/mkaring/ConfuserEx/releases/download/v1.6.0/ConfuserEx-CLI.zip -o ConfuserEx-CLI.zip
-      #Expand-Archive .\ConfuserEx-CLI.zip
+      wget https://github.com/mkaring/ConfuserEx/releases/download/v1.6.0/ConfuserEx-CLI.zip -o ConfuserEx-CLI.zip
+      Expand-Archive .\ConfuserEx-CLI.zip
 
       # copy dependencies
       $st = "D:\a\1\a\StandIn\*\bin\Release\*.exe"
@@ -342,6 +328,7 @@ steps:
       Add-Content D:\a\1\a\conf.crproj '<protection id="ref proxy" />'
       Add-Content D:\a\1\a\conf.crproj '<protection id="rename" />'
       Add-Content D:\a\1\a\conf.crproj '<protection id="resources" />'
+	  Add-Content D:\a\1\a\conf.crproj '<protection id="typescramble" />'
       Add-Content D:\a\1\a\conf.crproj '<protection id="watermark" action="remove" />'
       Add-Content D:\a\1\a\conf.crproj '</rule>'
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\StandIn\$sty\bin\Release\$stf' />"
