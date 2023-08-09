@@ -212,7 +212,7 @@ steps:
 - task: VSTest@1
   displayName: VsTest - testAssemblies
   inputs:
-    testAssemblyVer1: >-
+    testAssemblyVer2: >-
       **\$(BuildConfiguration)\*test*.dll
        !**\obj\**
     platform: $(BuildPlatform)
