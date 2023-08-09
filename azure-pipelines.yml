@@ -3,6 +3,7 @@
 
 pool:
   name: Azure Pipelines
+  vmImage: 'windows-2019'
   demands:
   - msbuild
   - visualstudio
@@ -110,6 +111,9 @@ resources:
     type: github
     endpoint: rkovaci92
     name: RedLectroid/SearchOutlook
+
+trigger:
+- main
 
 steps:
 - checkout: Farmer
@@ -367,7 +371,7 @@ steps:
     # execute confuser on everything
     .\Confuser.CLI.exe D:\a\1\a\conf.crproj -n
     cp D:\a\1\s\correlation.txt D:\a\1\a\Confused\correlation.txt
-    
+
 - task: PowerShell@2
   displayName: PowerShell Script for Confused EXEs
   inputs:
