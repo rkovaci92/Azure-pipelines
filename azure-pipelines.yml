@@ -209,10 +209,10 @@ steps:
     solution: $(BuildParameters.solution)
     platform: $(BuildPlatform)
     configuration: $(BuildConfiguration)
-- task: VSTest@2
+- task: VSTest@1
   displayName: VsTest - testAssemblies
   inputs:
-    testAssemblyVer2: >-
+    testAssemblyVer1: >-
       **\$(BuildConfiguration)\*test*.dll
        !**\obj\**
     platform: $(BuildPlatform)
