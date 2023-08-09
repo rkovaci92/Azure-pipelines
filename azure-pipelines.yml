@@ -244,7 +244,7 @@ steps:
 
       # download specific ConfuserEx version
       wget https://github.com/mkaring/ConfuserEx/releases/download/v1.6.0/ConfuserEx-CLI.zip -o ConfuserEx-CLI.zip
-      Expand-Archive .\ConfuserEx-CLI.zip
+      Expand-Archive .\ConfuserEx-CLI.zip D:\a\1\a\
 
       # copy dependencies
       $st = "D:\a\1\a\StandIn\*\bin\Release\*.exe"
@@ -378,7 +378,7 @@ steps:
       Add-Content D:\a\1\a\conf.crproj "</project>"
 
       # execute confuser on everything
-      .\Confuser.CLI.exe D:\a\1\a\conf.crproj -n
+      D:\a\1\a\Confuser.CLI.exe D:\a\1\a\conf.crproj -n
       cp D:\a\1\s\correlation.txt D:\a\1\a\Confused\correlation.txt
 
 - task: PowerShell@2
