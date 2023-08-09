@@ -229,145 +229,145 @@ steps:
     # make the confused folder
     mkdir D:\a\1\a\Confused\
 
-      # download specific ConfuserEx version
-      wget https://github.com/mkaring/ConfuserEx/releases/download/v1.6.0/ConfuserEx-CLI.zip -o ConfuserEx-CLI.zip
-      Expand-Archive .\ConfuserEx-CLI.zip
+    # download specific ConfuserEx version
+    wget https://github.com/mkaring/ConfuserEx/releases/download/v1.6.0/ConfuserEx-CLI.zip -o ConfuserEx-CLI.zip
+    Expand-Archive .\ConfuserEx-CLI.zip
 
-      # copy dependencies
-      $st = "D:\a\1\a\StandIn\*\bin\Release\*.exe"
-      $stf = (ls $st).Name
-      $sty = ($stf -split ".exe")[0]
-      cp D:\a\1\s\StandIn\packages\CommandLineParser.1.9.3.15\lib\CommandLine.dll D:\a\1\a\StandIn\$sty\bin\Release\CommandLine.dll
+    # copy dependencies
+    $st = "D:\a\1\a\StandIn\*\bin\Release\*.exe"
+    $stf = (ls $st).Name
+    $sty = ($stf -split ".exe")[0]
+    cp D:\a\1\s\StandIn\packages\CommandLineParser.1.9.3.15\lib\CommandLine.dll D:\a\1\a\StandIn\$sty\bin\Release\CommandLine.dll
 
-      $sv = "D:\a\1\a\SharpView\*\bin\Release\*.exe"
-      $svf = (ls $sv).Name
-      $svy = ($svf -split ".exe")[0]
-      cp D:\a\1\s\SharpView\packages\PCRE.NET.0.7.0\lib\net45\PCRE.NET.dll D:\a\1\a\SharpView\$svy\bin\Release\PCRE.NET.dll
+    $sv = "D:\a\1\a\SharpView\*\bin\Release\*.exe"
+    $svf = (ls $sv).Name
+    $svy = ($svf -split ".exe")[0]
+    cp D:\a\1\s\SharpView\packages\PCRE.NET.0.7.0\lib\net45\PCRE.NET.dll D:\a\1\a\SharpView\$svy\bin\Release\PCRE.NET.dll
 
-      # renamed binaries
-      $sh = "D:\a\1\a\SharpHound\bin\Release\net462\*.exe"
-      $shf = (ls $sh).Name
-      $shy = ($shf -split ".exe")[0]
+    # renamed binaries
+    $sh = "D:\a\1\a\SharpHound\bin\Release\net462\*.exe"
+    $shf = (ls $sh).Name
+    $shy = ($shf -split ".exe")[0]
 
-      $rb = "D:\a\1\a\Rubeus\*\bin\Release\*.exe"
-      $rbf = (ls $rb).Name
-      $rby = ($rbf -split ".exe")[0]
+    $rb = "D:\a\1\a\Rubeus\*\bin\Release\*.exe"
+    $rbf = (ls $rb).Name
+    $rby = ($rbf -split ".exe")[0]
 
-      $sb = "D:\a\1\a\Seatbelt\*\bin\Release\*.exe"
-      $sbf = (ls $sb).Name
-      $sby = ($sbf -split ".exe")[0]
+    $sb = "D:\a\1\a\Seatbelt\*\bin\Release\*.exe"
+    $sbf = (ls $sb).Name
+    $sby = ($sbf -split ".exe")[0]
 
-      $sk = "D:\a\1\a\SafetyKatz\*\bin\Release\*.exe"
-      $skf = (ls $sk).Name
-      $sky = ($skf -split ".exe")[0]
+    $sk = "D:\a\1\a\SafetyKatz\*\bin\Release\*.exe"
+    $skf = (ls $sk).Name
+    $sky = ($skf -split ".exe")[0]
 
-      $su = "D:\a\1\a\SharpUp\*\bin\Release\*.exe"
-      $suf = (ls $su).Name
-      $suy = ($suf -split ".exe")[0]
+    $su = "D:\a\1\a\SharpUp\*\bin\Release\*.exe"
+    $suf = (ls $su).Name
+    $suy = ($suf -split ".exe")[0]
 
-      $cf = "D:\a\1\a\Certify\*\bin\Release\*.exe"
-      $cff = (ls $cf).Name
-      $cfy = ($cff -split ".exe")[0]
+    $cf = "D:\a\1\a\Certify\*\bin\Release\*.exe"
+    $cff = (ls $cf).Name
+    $cfy = ($cff -split ".exe")[0]
 
-      $sw = "D:\a\1\a\SharpWebServer\*\bin\Release\*.exe"
-      $swf = (ls $sw).Name
-      $swy = ($swf -split ".exe")[0]
+    $sw = "D:\a\1\a\SharpWebServer\*\bin\Release\*.exe"
+    $swf = (ls $sw).Name
+    $swy = ($swf -split ".exe")[0]
 
-      $smd = "D:\a\1\a\SharpMiniDump\*\bin\Release\*.exe"
-      $smdf = (ls $smd).Name
-      $smdy = ($smdf -split ".exe")[0]
+    $smd = "D:\a\1\a\SharpMiniDump\*\bin\Release\*.exe"
+    $smdf = (ls $smd).Name
+    $smdy = ($smdf -split ".exe")[0]
 
-      $wmi = "D:\a\1\a\SharpWMI\*\bin\Release\*.exe"
-      $wmif = (ls $wmi).Name
-      $wmiy = ($wmif -split ".exe")[0]
+    $wmi = "D:\a\1\a\SharpWMI\*\bin\Release\*.exe"
+    $wmif = (ls $wmi).Name
+    $wmiy = ($wmif -split ".exe")[0]
 
-      $wk = "D:\a\1\a\Whisker\*\bin\Release\*.exe"
-      $wkf = (ls $wk).Name
-      $wky = ($wkf -split ".exe")[0]
+    $wk = "D:\a\1\a\Whisker\*\bin\Release\*.exe"
+    $wkf = (ls $wk).Name
+    $wky = ($wkf -split ".exe")[0]
 
-      $wsus = "D:\a\1\a\SharpWSUS\*\bin\Release\*.exe"
-      $wsusf = (ls $wsus).Name
-      $wsusy = ($wsusf -split ".exe")[0]
+    $wsus = "D:\a\1\a\SharpWSUS\*\bin\Release\*.exe"
+    $wsusf = (ls $wsus).Name
+    $wsusy = ($wsusf -split ".exe")[0]
 
-      $laps = "D:\a\1\a\SharpLAPS\*\bin\Release\*.exe"
-      $lapsf = (ls $laps).Name
-      $lapsy = ($lapsf -split ".exe")[0]
+    $laps = "D:\a\1\a\SharpLAPS\*\bin\Release\*.exe"
+    $lapsf = (ls $laps).Name
+    $lapsy = ($lapsf -split ".exe")[0]
 
-      $nopac = "D:\a\1\a\noPac\*\bin\Release\*.exe"
-      $nopacf = (ls $nopac).Name
-      $nopacy = ($nopacf -split ".exe")[0]
+    $nopac = "D:\a\1\a\noPac\*\bin\Release\*.exe"
+    $nopacf = (ls $nopac).Name
+    $nopacy = ($nopacf -split ".exe")[0]
 
-      $nenu = "D:\a\1\a\netsh_acl_enumerator\*\bin\Release\*.exe"
-      $nenuf = (ls $nenu).Name
-      $nenuy = ($nenuf -split ".exe")[0]
+    $nenu = "D:\a\1\a\netsh_acl_enumerator\*\bin\Release\*.exe"
+    $nenuf = (ls $nenu).Name
+    $nenuy = ($nenuf -split ".exe")[0]
 
-      $sccm = "D:\a\1\a\MalSCCM\*\bin\Release\*.exe"
-      $sccmf = (ls $sccm).Name
-      $sccmy = ($sccmf -split ".exe")[0]
+    $sccm = "D:\a\1\a\MalSCCM\*\bin\Release\*.exe"
+    $sccmf = (ls $sccm).Name
+    $sccmy = ($sccmf -split ".exe")[0]
       
-      $road = "D:\a\1\a\ROADtoken\bin\Release\*.exe"
-      $roadf = (ls $road).Name
+    $road = "D:\a\1\a\ROADtoken\bin\Release\*.exe"
+    $roadf = (ls $road).Name
 
-      $outl = "D:\a\1\a\SearchOutlook\*\bin\Release\*.exe"
-      $outlf = (ls $outl).Name
-      $outly = ($outlf -split ".exe")[0]
+    $outl = "D:\a\1\a\SearchOutlook\*\bin\Release\*.exe"
+    $outlf = (ls $outl).Name
+    $outly = ($outlf -split ".exe")[0]
 
-      # create confuser crpoj file
-      New-Item D:\a\1\a\conf.crproj
-      Set-Content D:\a\1\a\conf.crproj '<?xml version="1.0" encoding="utf-8"?>'
-      Add-Content D:\a\1\a\conf.crproj '<project outputDir="D:\a\1\a\Confused\" baseDir="D:\a\1\a\" xmlns="http://confuser.codeplex.com">'
-      Add-Content D:\a\1\a\conf.crproj '<rule preset="maximum" pattern="true">'
-      Add-Content D:\a\1\a\conf.crproj '<protection id="anti debug" />'
-      Add-Content D:\a\1\a\conf.crproj '<protection id="anti dump" />'
-      Add-Content D:\a\1\a\conf.crproj '<protection id="anti ildasm" />'
-      Add-Content D:\a\1\a\conf.crproj '<protection id="anti tamper" />'
-      Add-Content D:\a\1\a\conf.crproj '<protection id="constants" />'
-      Add-Content D:\a\1\a\conf.crproj '<protection id="ctrl flow" />'
-      Add-Content D:\a\1\a\conf.crproj '<protection id="harden" />'
-      Add-Content D:\a\1\a\conf.crproj '<protection id="invalid metadata" />'
-      Add-Content D:\a\1\a\conf.crproj '<protection id="ref proxy" />'
-      Add-Content D:\a\1\a\conf.crproj '<protection id="rename" />'
-      Add-Content D:\a\1\a\conf.crproj '<protection id="resources" />'
-	    Add-Content D:\a\1\a\conf.crproj '<protection id="typescramble" />'
-      Add-Content D:\a\1\a\conf.crproj '<protection id="watermark" action="remove" />'
-      Add-Content D:\a\1\a\conf.crproj '</rule>'
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\StandIn\$sty\bin\Release\$stf' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpView\$svy\bin\Release\$svf' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpHound\bin\Release\net462\$shy.exe' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Rubeus\$rby\bin\Release\$rbf' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Seatbelt\$sby\bin\Release\$sbf' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SafetyKatz\$sky\bin\Release\$skf' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpUp\$suy\bin\Release\$suf' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Certify\$cfy\bin\Release\$cff' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpWebServer\$swy\bin\Release\$swf' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpMiniDump\$smdy\bin\Release\$smdf' />"  
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpWMI\$wmiy\bin\Release\$wmif' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Whisker\$wky\bin\Release\$wkf' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpWSUS\$wsusy\bin\Release\$wsusf' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpLAPS\$lapsy\bin\Release\$lapsf' />" 
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\noPac\$nopacy\bin\Release\$nopacf' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\netsh_acl_enumerator\$nenuy\bin\Release\$nenuf' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\MalSCCM\$sccmy\bin\Release\$sccmf' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SearchOutlook\$outly\bin\Release\$outlf' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\ROADtoken\bin\Release\$roadf' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Internal-Monologue\InternalMonologueExe\bin\Release\InternalMonologue.exe' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Farmer\Farmer\bin\Release\Farmer.exe' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpDPAPI\SharpDPAPI\bin\Release\SharpDPAPI.exe' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpDPAPI\SharpChrome\bin\Release\SharpChrome.exe' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\KrbRelay\KrbRelay\bin\Release\KrbRelay.exe' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\KrbRelay\CheckPort\bin\Release\CheckPort.exe' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpSystemTriggers\Midl2Bytes\bin\Release\Midl2Bytes.exe' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpSystemTriggers\SharpDcomTrigger\bin\Release\SharpDcomTrigger.exe' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpSystemTriggers\SharpEfsTrigger\bin\Release\SharpEfsTrigger.exe' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpSystemTriggers\SharpSpoolTrigger\bin\Release\SharpSpoolTrigger.exe' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\LiquidSnake\CSharpNamedPipeLoader\CSharpNamedPipeLoader\bin\Release\CSharpNamedPipeLoader.exe' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\LiquidSnake\LiquidSnake\LiquidSnake\bin\Release\LiquidSnake.exe' />"
-      Add-Content D:\a\1\a\conf.crproj "</project>"
+    # create confuser crpoj file
+    New-Item D:\a\1\a\conf.crproj
+    Set-Content D:\a\1\a\conf.crproj '<?xml version="1.0" encoding="utf-8"?>'
+    Add-Content D:\a\1\a\conf.crproj '<project outputDir="D:\a\1\a\Confused\" baseDir="D:\a\1\a\" xmlns="http://confuser.codeplex.com">'
+    Add-Content D:\a\1\a\conf.crproj '<rule preset="maximum" pattern="true">'
+    Add-Content D:\a\1\a\conf.crproj '<protection id="anti debug" />'
+    Add-Content D:\a\1\a\conf.crproj '<protection id="anti dump" />'
+    Add-Content D:\a\1\a\conf.crproj '<protection id="anti ildasm" />'
+    Add-Content D:\a\1\a\conf.crproj '<protection id="anti tamper" />'
+    Add-Content D:\a\1\a\conf.crproj '<protection id="constants" />'
+    Add-Content D:\a\1\a\conf.crproj '<protection id="ctrl flow" />'
+    Add-Content D:\a\1\a\conf.crproj '<protection id="harden" />'
+    Add-Content D:\a\1\a\conf.crproj '<protection id="invalid metadata" />'
+    Add-Content D:\a\1\a\conf.crproj '<protection id="ref proxy" />'
+    Add-Content D:\a\1\a\conf.crproj '<protection id="rename" />'
+    Add-Content D:\a\1\a\conf.crproj '<protection id="resources" />'
+	  Add-Content D:\a\1\a\conf.crproj '<protection id="typescramble" />'
+    Add-Content D:\a\1\a\conf.crproj '<protection id="watermark" action="remove" />'
+    Add-Content D:\a\1\a\conf.crproj '</rule>'
+    Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\StandIn\$sty\bin\Release\$stf' />"
+    Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpView\$svy\bin\Release\$svf' />"
+    Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpHound\bin\Release\net462\$shy.exe' />"
+    Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Rubeus\$rby\bin\Release\$rbf' />"
+    Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Seatbelt\$sby\bin\Release\$sbf' />"
+    Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SafetyKatz\$sky\bin\Release\$skf' />"
+    Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpUp\$suy\bin\Release\$suf' />"
+    Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Certify\$cfy\bin\Release\$cff' />"
+    Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpWebServer\$swy\bin\Release\$swf' />"
+    Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpMiniDump\$smdy\bin\Release\$smdf' />"  
+    Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpWMI\$wmiy\bin\Release\$wmif' />"
+    Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Whisker\$wky\bin\Release\$wkf' />"
+    Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpWSUS\$wsusy\bin\Release\$wsusf' />"
+    Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpLAPS\$lapsy\bin\Release\$lapsf' />" 
+    Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\noPac\$nopacy\bin\Release\$nopacf' />"
+    Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\netsh_acl_enumerator\$nenuy\bin\Release\$nenuf' />"
+    Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\MalSCCM\$sccmy\bin\Release\$sccmf' />"
+    Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SearchOutlook\$outly\bin\Release\$outlf' />"
+    Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\ROADtoken\bin\Release\$roadf' />"
+    Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Internal-Monologue\InternalMonologueExe\bin\Release\InternalMonologue.exe' />"
+    Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Farmer\Farmer\bin\Release\Farmer.exe' />"
+    Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpDPAPI\SharpDPAPI\bin\Release\SharpDPAPI.exe' />"
+    Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpDPAPI\SharpChrome\bin\Release\SharpChrome.exe' />"
+    Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\KrbRelay\KrbRelay\bin\Release\KrbRelay.exe' />"
+    Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\KrbRelay\CheckPort\bin\Release\CheckPort.exe' />"
+    Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpSystemTriggers\Midl2Bytes\bin\Release\Midl2Bytes.exe' />"
+    Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpSystemTriggers\SharpDcomTrigger\bin\Release\SharpDcomTrigger.exe' />"
+    Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpSystemTriggers\SharpEfsTrigger\bin\Release\SharpEfsTrigger.exe' />"
+    Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpSystemTriggers\SharpSpoolTrigger\bin\Release\SharpSpoolTrigger.exe' />"
+    Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\LiquidSnake\CSharpNamedPipeLoader\CSharpNamedPipeLoader\bin\Release\CSharpNamedPipeLoader.exe' />"
+    Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\LiquidSnake\LiquidSnake\LiquidSnake\bin\Release\LiquidSnake.exe' />"
+    Add-Content D:\a\1\a\conf.crproj "</project>"
 
-      # execute confuser on everything
-      .\Confuser.CLI.exe D:\a\1\a\conf.crproj -n
-      cp D:\a\1\s\correlation.txt D:\a\1\a\Confused\correlation.txt
-
+    # execute confuser on everything
+    .\Confuser.CLI.exe D:\a\1\a\conf.crproj -n
+    cp D:\a\1\s\correlation.txt D:\a\1\a\Confused\correlation.txt
+    
 - task: PowerShell@2
   displayName: PowerShell Script for Confused EXEs
   inputs:
