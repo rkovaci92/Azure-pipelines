@@ -1,6 +1,14 @@
 # Author: Roxana Kovaci
 # Twitter: @RoxanaKovaci
 
+variables:
+- name: BuildParameters.solution
+  value: '**\*.sln'
+- name: BuildConfiguration
+  value: Release
+- name: BuildPlatform
+  value: 'Any CPU'
+  
 pool:
   name: Azure Pipelines
   vmImage: 'windows-2019'
