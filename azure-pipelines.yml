@@ -202,14 +202,13 @@ steps:
       Add-Content D:\a\1\s\SharpHound\FodyWeavers.xml '</IncludeAssemblies>'
       Add-Content D:\a\1\s\SharpHound\FodyWeavers.xml '</Costura>'
       Add-Content D:\a\1\s\SharpHound\FodyWeavers.xml '</Weavers>'
-
 - task: VSBuild@1
   displayName: Build solution **\*.sln
   inputs:
     solution: $(BuildParameters.solution)
     platform: $(BuildPlatform)
     configuration: $(BuildConfiguration)
-- task: VSTest@1
+- task: VSTest@2
   displayName: VsTest - testAssemblies
   inputs:
     testAssemblyVer2: >-
@@ -239,9 +238,19 @@ steps:
       # make the confused folder
       mkdir D:\a\1\a\Confused\
 
+      #   Install 7zip module
+      [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+      Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
+      Set-PSRepository -Name 'PSGallery' -SourceLocation "https://www.powershellgallery.com/api/v2" -InstallationPolicy Trusted
+      Install-Module -Name 7Zip4PowerShell -Force
+
+      #   Extract 7zip file
+      wget https://github.com/XenocodeRCE/neo-ConfuserEx/releases/download/v1.0.0/bin.7z -o bin.7z
+      Expand-7Zip -ArchiveFileName .\bin.7z -TargetPath .\
+
       # download specific ConfuserEx version
-      wget https://github.com/mkaring/ConfuserEx/releases/download/v1.6.0/ConfuserEx-CLI.zip -o ConfuserEx-CLI.zip
-      Expand-Archive .\ConfuserEx-CLI.zip
+      #wget https://github.com/mkaring/ConfuserEx/releases/download/v1.6.0/ConfuserEx-CLI.zip -o ConfuserEx-CLI.zip
+      #Expand-Archive .\ConfuserEx-CLI.zip
 
       # copy dependencies
       $st = "D:\a\1\a\StandIn\*\bin\Release\*.exe"
@@ -379,9 +388,8 @@ steps:
       Add-Content D:\a\1\a\conf.crproj "</project>"
 
       # execute confuser on everything
-      .\ConfuserEx-CLI\Confuser.CLI.exe D:\a\1\a\conf.crproj -n
+      .\Confuser.CLI.exe D:\a\1\a\conf.crproj -n
       cp D:\a\1\s\correlation.txt D:\a\1\a\Confused\correlation.txt
-      
 - task: PowerShell@2
   displayName: PowerShell Script for Confused EXEs
   inputs:
