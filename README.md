@@ -20,9 +20,7 @@ The list of currently included repos in the pipelines:
 - SharpUp
 - SharpDPAPI
 - Certify
-- KrbRelayUp
 - KrbRelay
-- Snaffler
 - SharpWebServer
 - SharpWMI
 - SharpMiniDump
