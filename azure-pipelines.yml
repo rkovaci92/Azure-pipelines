@@ -329,7 +329,7 @@ steps:
       New-Item D:\a\1\a\conf.crproj
       Set-Content D:\a\1\a\conf.crproj '<?xml version="1.0" encoding="utf-8"?>'
       Add-Content D:\a\1\a\conf.crproj '<project outputDir="D:\a\1\a\Confused\" baseDir="D:\a\1\a\" xmlns="http://confuser.codeplex.com">'
-      Add-Content D:\a\1\a\conf.crproj '<rule preset="maximum" pattern="true">'
+      Add-Content D:\a\1\a\conf.crproj '<rule pattern="true" >'
       Add-Content D:\a\1\a\conf.crproj '<protection id="anti debug" />'
       Add-Content D:\a\1\a\conf.crproj '<protection id="anti dump" />'
       Add-Content D:\a\1\a\conf.crproj '<protection id="anti ildasm" />'
@@ -349,7 +349,7 @@ steps:
       Add-Content D:\a\1\a\conf.crproj '<protection id="resources" />'
       Add-Content D:\a\1\a\conf.crproj '<protection id="typescramble" />'
       Add-Content D:\a\1\a\conf.crproj '<protection id="watermark" action="remove" />'
-      Add-Content D:\a\1\a\conf.crproj '</rule>'
+      Add-Content D:\a\1\a\conf.crproj '</rule> '
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\StandIn\$sty\bin\Release\$stf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpView\$svy\bin\Release\$svf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpHound\bin\Release\net462\$shy.exe' />"
