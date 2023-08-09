@@ -328,7 +328,7 @@ steps:
       Add-Content D:\a\1\a\conf.crproj '<protection id="ref proxy" />'
       Add-Content D:\a\1\a\conf.crproj '<protection id="rename" />'
       Add-Content D:\a\1\a\conf.crproj '<protection id="resources" />'
-	  Add-Content D:\a\1\a\conf.crproj '<protection id="typescramble" />'
+	    Add-Content D:\a\1\a\conf.crproj '<protection id="typescramble" />'
       Add-Content D:\a\1\a\conf.crproj '<protection id="watermark" action="remove" />'
       Add-Content D:\a\1\a\conf.crproj '</rule>'
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\StandIn\$sty\bin\Release\$stf' />"
@@ -367,6 +367,7 @@ steps:
       # execute confuser on everything
       .\Confuser.CLI.exe D:\a\1\a\conf.crproj -n
       cp D:\a\1\s\correlation.txt D:\a\1\a\Confused\correlation.txt
+
 - task: PowerShell@2
   displayName: PowerShell Script for Confused EXEs
   inputs:
