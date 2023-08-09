@@ -226,8 +226,8 @@ steps:
   inputs:
     targetType: inline
     script: |
-      # make the confused folder
-      mkdir D:\a\1\a\Confused\
+    # make the confused folder
+    mkdir D:\a\1\a\Confused\
 
       # download specific ConfuserEx version
       wget https://github.com/mkaring/ConfuserEx/releases/download/v1.6.0/ConfuserEx-CLI.zip -o ConfuserEx-CLI.zip
