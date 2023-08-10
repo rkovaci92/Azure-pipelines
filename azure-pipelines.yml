@@ -63,10 +63,6 @@ resources:
     type: github
     endpoint: rkovaci92
     name: eladshamir/Internal-Monologue
-  - repository: SQLRecon 
-    type: github
-    endpoint: rkovaci92
-    name: RoxanaKovaci/SQLRecon
   - repository: Whisker 
     type: github
     endpoint: rkovaci92
@@ -140,7 +136,6 @@ steps:
 - checkout: SharpWMI
 - checkout: SharpMiniDump
 - checkout: Internal-Monologue
-- checkout: SQLRecon
 - checkout: Whisker
 - checkout: StandIn
 - checkout: SharpView
@@ -330,10 +325,6 @@ steps:
       $outlf = (ls $outl).Name
       $outly = ($outlf -split ".exe")[0]
 
-      $sqlr = "D:\a\1\a\SQLRecon\*\bin\Release\*.exe"
-      $sqln = (ls $sqlr).Name
-      $sqlm = ($sqln -split ".exe")[0]
-
       # create confuser crpoj file
       New-Item D:\a\1\a\conf.crproj
       Set-Content D:\a\1\a\conf.crproj '<?xml version="1.0" encoding="utf-8"?>'
@@ -376,7 +367,6 @@ steps:
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\netsh_acl_enumerator\$nenuy\bin\Release\$nenuf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\MalSCCM\$sccmy\bin\Release\$sccmf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SearchOutlook\$outly\bin\Release\$outlf' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SQLRecon\$sqlm\bin\Release\$sqln' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\ROADtoken\bin\Release\$roadf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Internal-Monologue\InternalMonologueExe\bin\Release\InternalMonologue.exe' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Farmer\Farmer\bin\Release\Farmer.exe' />"
