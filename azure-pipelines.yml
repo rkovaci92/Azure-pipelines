@@ -78,7 +78,7 @@ resources:
   - repository: SharpHound 
     type: github
     endpoint: rkovaci92
-    name: BloodHoundAD/SharpHound
+    name: LuemmelSec/SharpHound
   - repository: KrbRelay
     type: github
     endpoint: rkovaci92
