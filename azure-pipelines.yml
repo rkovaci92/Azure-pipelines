@@ -351,7 +351,7 @@ steps:
       Add-Content D:\a\1\a\conf.crproj '</rule>'
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\StandIn\$sty\bin\Release\$stf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpView\$svy\bin\Release\$svf' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpHound3\$shf\bin\Release\$shy.exe' />"
+      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpHound3\$shf\bin\Release\$shy' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Rubeus\$rby\bin\Release\$rbf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Seatbelt\$sby\bin\Release\$sbf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SafetyKatz\$sky\bin\Release\$skf' />"
