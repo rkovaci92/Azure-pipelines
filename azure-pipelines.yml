@@ -79,6 +79,10 @@ resources:
     type: github
     endpoint: rkovaci92
     name: RoxanaKovaci/SharpHound3
+  - repository: SOAPHound
+    type: github
+    endpoint: rkovaci92
+    name: FalconForceTeam/SOAPHound
   - repository: KrbRelay
     type: github
     endpoint: rkovaci92
@@ -140,6 +144,7 @@ steps:
 - checkout: StandIn
 - checkout: SharpView
 - checkout: SharpHound3
+- checkout: SOAPHound
 - checkout: MalSCCM
 - checkout: SharpWSUS
 - checkout: netsh_acl_enumerator
@@ -196,15 +201,31 @@ steps:
   inputs:
     targetType: inline
     script: |
-      Set-Content D:\a\1\s\SharpHound3\FodyWeavers.xml '<?xml version="1.0" encoding="utf-8" ?>'
-      Add-Content D:\a\1\s\SharpHound3\FodyWeavers.xml '<Weavers>'
-      Add-Content D:\a\1\s\SharpHound3\FodyWeavers.xml '<Costura>'
-      Add-Content D:\a\1\s\SharpHound3\FodyWeavers.xml 'DisableCleanup="true"'
-      Add-Content D:\a\1\s\SharpHound3\FodyWeavers.xml '<IncludeAssemblies>'
-      Add-Content D:\a\1\s\SharpHound3\FodyWeavers.xml 'CommandLine'
-      Add-Content D:\a\1\s\SharpHound3\FodyWeavers.xml '</IncludeAssemblies>'
-      Add-Content D:\a\1\s\SharpHound3\FodyWeavers.xml '</Costura>'
-      Add-Content D:\a\1\s\SharpHound3\FodyWeavers.xml '</Weavers>'
+      Set-Content D:\a\1\s\SharpHound3\SharpHound3\FodyWeavers.xml '<?xml version="1.0" encoding="utf-8" ?>'
+      Add-Content D:\a\1\s\SharpHound3\SharpHound3\FodyWeavers.xml '<Weavers>'
+      Add-Content D:\a\1\s\SharpHound3\SharpHound3\FodyWeavers.xml '<Costura>'
+      Add-Content D:\a\1\s\SharpHound3\SharpHound3\FodyWeavers.xml 'DisableCleanup="true"'
+      Add-Content D:\a\1\s\SharpHound3\SharpHound3\FodyWeavers.xml '<IncludeAssemblies>'
+      Add-Content D:\a\1\s\SharpHound3\SharpHound3\FodyWeavers.xml 'CommandLine'
+      Add-Content D:\a\1\s\SharpHound3\SharpHound3\FodyWeavers.xml '</IncludeAssemblies>'
+      Add-Content D:\a\1\s\SharpHound3\SharpHound3\FodyWeavers.xml '</Costura>'
+      Add-Content D:\a\1\s\SharpHound3\SharpHound3\FodyWeavers.xml '</Weavers>'
+
+- task: PowerShell@2
+  displayName: PowerShell Script for SOAPHound
+  inputs:
+    targetType: inline
+    script: |
+      Set-Content D:\a\1\s\SOAPHound\FodyWeavers.xml '<?xml version="1.0" encoding="utf-8" ?>'
+      Add-Content D:\a\1\s\SOAPHound\FodyWeavers.xml '<Weavers>'
+      Add-Content D:\a\1\s\SOAPHound\FodyWeavers.xml '<Costura>'
+      Add-Content D:\a\1\s\SOAPHound\FodyWeavers.xml 'DisableCleanup="true"'
+      Add-Content D:\a\1\s\SOAPHound\FodyWeavers.xml '<IncludeAssemblies>'
+      Add-Content D:\a\1\s\SOAPHound\FodyWeavers.xml 'CommandLine'
+      Add-Content D:\a\1\s\SOAPHound\FodyWeavers.xml '</IncludeAssemblies>'
+      Add-Content D:\a\1\s\SOAPHound\FodyWeavers.xml '</Costura>'
+      Add-Content D:\a\1\s\SOAPHound\FodyWeavers.xml '</Weavers>'
+
 - task: VSBuild@1
   displayName: Build solution **\*.sln
   inputs:
@@ -261,6 +282,10 @@ steps:
       $sh = "D:\a\1\a\SharpHound3\*\bin\Release\*.exe"
       $shf = (ls $sh).Name
       $shy = ($shf -split ".exe")[0]
+      
+      $soaph = "D:\a\1\a\*\bin\Release\*.exe"
+      $soapf = (ls $soaph).Name
+      $soapy = ($soapf -split ".exe")[0]
 
       $rb = "D:\a\1\a\Rubeus\*\bin\Release\*.exe"
       $rbf = (ls $rb).Name
@@ -352,6 +377,7 @@ steps:
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\StandIn\$sty\bin\Release\$stf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpView\$svy\bin\Release\$svf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpHound3\$shf\bin\Release\$shy' />"
+      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\$soapf\bin\Release\$soapy' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Rubeus\$rby\bin\Release\$rbf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Seatbelt\$sby\bin\Release\$sbf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SafetyKatz\$sky\bin\Release\$skf' />"
