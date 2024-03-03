@@ -402,7 +402,7 @@ steps:
     TargetPath: '\\my\share\$(Build.DefinitionName)\$(Build.BuildNumber)'
 
 schedules:
-- cron: "0 2 * * Mon,Tue,Wed,Thur,Fri"
+- cron: "0 3 * * Mon,Tue,Wed,Thur,Fri"
   displayName: Daily night builds
   branches:
     include:
