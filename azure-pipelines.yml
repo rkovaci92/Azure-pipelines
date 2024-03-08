@@ -75,10 +75,10 @@ resources:
     type: github
     endpoint: rkovaci92
     name: tevora-threat/SharpView
-  - repository: SharpHound3 
-    type: github
-    endpoint: rkovaci92
-    name: RoxanaKovaci/SharpHound3
+  #- repository: SharpHound3 
+  #  type: github
+  #  endpoint: rkovaci92
+  #  name: RoxanaKovaci/SharpHound3
   - repository: KrbRelay
     type: github
     endpoint: rkovaci92
@@ -139,7 +139,7 @@ steps:
 - checkout: Whisker
 - checkout: StandIn
 - checkout: SharpView
-- checkout: SharpHound3
+#- checkout: SharpHound3
 - checkout: MalSCCM
 - checkout: SharpWSUS
 - checkout: netsh_acl_enumerator
@@ -245,9 +245,9 @@ steps:
       cp D:\a\1\s\SharpView\packages\PCRE.NET.0.7.0\lib\net45\PCRE.NET.dll D:\a\1\a\SharpView\$svy\bin\Release\PCRE.NET.dll
 
       # renamed binaries
-      $sh = "D:\a\1\a\SharpHound3\*\bin\Release\*.exe"
-      $shf = (ls $sh).Name
-      $shy = ($shf -split ".exe")[0]
+      #$sh = "D:\a\1\a\SharpHound3\*\bin\Release\*.exe"
+      #$shf = (ls $sh).Name
+      #$shy = ($shf -split ".exe")[0]
 
       $rb = "D:\a\1\a\Rubeus\*\bin\Release\*.exe"
       $rbf = (ls $rb).Name
@@ -338,7 +338,6 @@ steps:
       Add-Content D:\a\1\a\conf.crproj '</rule>'
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\StandIn\$sty\bin\Release\$stf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpView\$svy\bin\Release\$svf' />"
-      Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SharpHound3\$shy\bin\Release\$shf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Rubeus\$rby\bin\Release\$rbf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\Seatbelt\$sby\bin\Release\$sbf' />"
       Add-Content D:\a\1\a\conf.crproj "<module path='D:\a\1\a\SafetyKatz\$sky\bin\Release\$skf' />"
