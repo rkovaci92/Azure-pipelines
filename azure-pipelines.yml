@@ -386,11 +386,3 @@ steps:
   inputs:
     PathtoPublish: $(build.artifactstagingdirectory)\Output\
     TargetPath: '\\my\share\$(Build.DefinitionName)\$(Build.BuildNumber)'
-
-schedules:
-- cron: "0 2 * * Mon,Tue,Wed,Thur,Fri"
-  displayName: Daily night builds
-  branches:
-    include:
-    - master
-  always: true
