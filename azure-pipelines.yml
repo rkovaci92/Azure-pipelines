@@ -371,16 +371,13 @@ steps:
       mkdir $(Pipeline.Workspace)\a\Output\
       gci -recurse *.exe -Path $(Pipeline.Workspace)\a\Confused\| Move-Item -Destination $(Pipeline.Workspace)\a\Output\
       gci -recurse *.txt -Path $(Pipeline.Workspace)\a\Confused\| Move-Item -Destination $(Pipeline.Workspace)\a\Output\
-      ls $(build.artifactstagingdirectory)\Output\
-      pwd
-      ls
-      ls $(Pipeline.Workspace)\a\Output\
+      Compress-Archive -Path $(Pipeline.Workspace)\a\Output\ -DestinationPath $(Pipeline.Workspace)\a\Output\drop.zip
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
   condition: succeededOrFailed()
   inputs:
-    PathtoPublish: $(build.artifactstagingdirectory)\Output\
+    PathtoPublish: $(build.artifactstagingdirectory)\Output\drop.zip
     ArtifactName: 'output'
     publishLocation: 'Container'
 
