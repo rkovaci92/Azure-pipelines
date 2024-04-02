@@ -166,7 +166,7 @@ steps:
   inputs:
     targetType: inline
     script: |
-      wget https://raw.githubusercontent.com/xforcered/InvisibilityCloak/main/InvisibilityCloak.py -o InvisibilityCloak.py
+      wget https://raw.githubusercontent.com/h4wkst3r/InvisibilityCloak/main/InvisibilityCloak.py -o InvisibilityCloak.py
       wget https://raw.githubusercontent.com/RoxanaKovaci/Azure-pipelines/master/random-words.py -o words.py
 
       pip3 install requests
@@ -377,3 +377,11 @@ steps:
   inputs:
     PathtoPublish: $(build.artifactstagingdirectory)\Output\
     TargetPath: '\\my\share\$(Build.DefinitionName)\$(Build.BuildNumber)'
+  
+schedules:
+- cron: "0 2 * * Mon,Tue,Wed,Thur,Fri"
+  displayName: Daily night build
+  branches:
+    include:
+    - main
+  always: true
